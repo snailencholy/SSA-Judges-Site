@@ -1,0 +1,1 @@
+﻿cat 'C:\Users\Sean Hampton\Desktop\judge_data.txt' | Select-String "judge","total_dispositions","fully_favorable","total_awards","total_denials","total_decisions","partially_favorable" | Out-File 'C:\Users\Sean Hampton\Desktop\Projects\test.txt'
