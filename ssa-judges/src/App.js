@@ -1,23 +1,18 @@
 import React from "react";
+import { styled } from '@material-ui/core/styles'
 import TextField from "@material-ui/core/TextField";
+import judgeTextField from './components/judgeTextField'
 import "./App.css";
-import 
-
-
-
 
 function App() {
 
-  const TextFieldStyle = {
-    backgroundcolor: 'Grey',
-    color: 'black',
-    padding: '8px',
-  }
-  
+
+
+
   return (
     <div>
       <div>
-        <search></search>
+        <judgeTextField/>
       </div>
     </div>
 
