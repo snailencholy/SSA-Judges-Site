@@ -16,6 +16,7 @@ import re
 ###########
 stripped = ""
 output = ""
+pattern = '[a-z]+[A-Z]+'
 outfile = open("outfile.txt", 'w', encoding='utf-8')
 
 #####################
@@ -29,9 +30,9 @@ with open('scrubbed.txt', 'r+') as file:
     outfile.write(stripped)
     outfile.close()
 
-with open("outfile.txt", 'r+', encoding='utf-8') as final_file:
-    for line in final_file.readlines():
-        output += line.replace(" ", "")
-    final_file.write(output) 
+# with open("outfile.txt", 'r+', encoding='utf-8') as final_file:
+#     for line in final_file.read():
+#         output += line.replace(" ", "")
+#     final_file.write(output) 
 
 
