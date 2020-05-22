@@ -14,6 +14,7 @@ import re
 ###########
 # Globals #
 ###########
+text = ""
 stripped = ""
 output = ""
 pattern = '[a-z]+[A-Z]+'

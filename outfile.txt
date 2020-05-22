@@ -1,3 +1,4 @@
+AdministrativeLawJudgeDispositionData
 174
 Abbondondelo, Mary
 17
@@ -20,7 +21,7 @@ Adamo, Genevieve
 147
 303
 64
-Adams, M. J.
+Adams, M. J. 
 13
 77
 189
@@ -118,7 +119,7 @@ Aliberti, Louis
 74
 298
 77
-Alis, E.
+Alis, E. 
 32
 109
 195
@@ -391,7 +392,7 @@ Ausems, Moira
 86
 370
 83
-Ayer, F.H
+Ayer, F. H
 17
 100
 188
@@ -412,7 +413,7 @@ Ayling, Corey
 109
 298
 53
-Ba-Yunus, AsadM.
+Ba-Yunus, AsadM. 
 13
 66
 203
@@ -433,7 +434,7 @@ Bach, Laura
 3
 16
 60
-BaileySmith, L.R
+BaileySmith, L. R
 8
 68
 211
@@ -573,14 +574,14 @@ Barezky, BonnyS
 26
 236
 63
-Barker, Jr., PaulD
+Barker, Jr. , PaulD
 25
 88
 208
 120
 260
 173
-BarkleyIII, H.J.
+BarkleyIII, H. J. 
 6
 179
 302
@@ -594,7 +595,7 @@ Barletta, Frank
 148
 313
 127
-Barlow, K.
+Barlow, K. 
 14
 141
 272
@@ -832,14 +833,14 @@ Benson, John
 116
 290
 102
-Bentley, J.Leland
+Bentley, J. Leland
 5
 107
 236
 129
 288
 99
-Benton, A.
+Benton, A. 
 25
 124
 280
@@ -1231,7 +1232,7 @@ Brookins, AlisonK
 92
 258
 50
-Brounoff, J.M
+Brounoff, J. M
 5
 55
 83
@@ -1364,7 +1365,7 @@ Budney, Amy
 105
 318
 183
-Buel, Sr., TobyJ
+Buel, Sr. , TobyJ
 8
 191
 274
@@ -1406,7 +1407,7 @@ Burgtorf, Brian
 3
 4
 109
-Burke, J.Elaine
+Burke, J. Elaine
 17
 126
 181
@@ -1490,7 +1491,7 @@ Butler, RobertM
 40
 238
 112
-Butler, StevenL.
+Butler, StevenL. 
 10
 122
 210
@@ -1574,7 +1575,7 @@ Carlton, John
 98
 204
 47
-Carnes, StevenL.
+Carnes, StevenL. 
 4
 51
 85
@@ -1637,7 +1638,7 @@ Cartledge, JamesC
 92
 240
 85
-Carvalho, SherrillA.L
+Carvalho, SherrillA. L
 13
 98
 240
@@ -1672,7 +1673,7 @@ Catanese, LouisM
 137
 269
 23
-Cates, Jr., EarlC.
+Cates, Jr. , EarlC. 
 1
 24
 39
@@ -1700,7 +1701,7 @@ Cerulli, Nicholas
 72
 201
 136
-Chambers, HenryH.
+Chambers, HenryH. 
 25
 161
 206
@@ -1763,7 +1764,7 @@ Chess, Laura
 111
 312
 138
-Childs, J.S
+Childs, J. S
 8
 146
 208
@@ -2078,7 +2079,7 @@ Crowell, JasonW
 136
 281
 114
-Crutchfield, B.D
+Crutchfield, B. D
 36
 150
 257
@@ -2239,7 +2240,7 @@ Davis, Kelly
 103
 329
 165
-Davis, L.E
+Davis, L. E
 32
 197
 254
@@ -2379,7 +2380,7 @@ DePrimo, Michael
 133
 390
 45
-Deramus, OslyF.
+Deramus, OslyF. 
 10
 55
 162
@@ -2442,7 +2443,7 @@ Dietz, Allison
 47
 97
 37
-Digby, PatrickR.
+Digby, PatrickR. 
 8
 45
 227
@@ -2589,7 +2590,7 @@ Dodson, John
 84
 270
 104
-Dodson, O.P
+Dodson, O. P
 22
 126
 246
@@ -3520,14 +3521,14 @@ Frost-Wolf, Joyce
 223
 364
 235
-Frye, D.Randall
+Frye, D. Randall
 19
 254
 295
 41
 331
 97
-Fulcher, EricS.
+Fulcher, EricS. 
 17
 114
 275
@@ -3947,7 +3948,7 @@ Grippo, TheodoreW
 103
 226
 120
-Grissom, K.Dickson
+Grissom, K. Dickson
 3
 123
 185
@@ -4108,7 +4109,7 @@ Hagler, ReneeB
 1
 1
 173
-Haigler, Jr., Whitfield
+Haigler, Jr. , Whitfield
 12
 185
 214
@@ -4185,7 +4186,7 @@ Hammock, Melissa
 138
 294
 31
-HammondJr., WarrenL
+HammondJr. , WarrenL
 4
 35
 70
@@ -4213,21 +4214,21 @@ Hanekamp, StephenM
 123
 341
 93
-Hannan, B.
+Hannan, B. 
 33
 126
 254
 128
 320
 0
-Hannon, T.Patrick
+Hannon, T. Patrick
 0
 0
 1
 1
 1
 135
-Hannon, T.Patrick
+Hannon, T. Patrick
 9
 144
 207
@@ -4318,28 +4319,28 @@ Harper, DonA
 96
 251
 6
-Harrell, Jr., MasonD
+Harrell, Jr. , MasonD
 0
 6
 10
 4
 11
 150
-Harrell, Jr., MasonD
+Harrell, Jr. , MasonD
 7
 157
 216
 59
 271
 2
-Harrell, Jr., MasonD
+Harrell, Jr. , MasonD
 0
 2
 2
 0
 2
 63
-Harrington, I.K
+Harrington, I. K
 26
 89
 179
@@ -4367,7 +4368,7 @@ Hart, JeffreyW
 118
 315
 65
-Hart, M.
+Hart, M. 
 51
 116
 214
@@ -4402,7 +4403,7 @@ Hatfield, Jeffrey
 39
 277
 75
-Hauser, WilliamH.
+Hauser, WilliamH. 
 13
 88
 183
@@ -4514,7 +4515,7 @@ Henry, Tracy
 84
 147
 103
-Herin, Jr., WalterC
+Herin, Jr. , WalterC
 34
 137
 240
@@ -4640,14 +4641,14 @@ Hoback, Ryan
 60
 176
 108
-Hobbs, B.
+Hobbs, B. 
 17
 125
 170
 45
 203
 16
-Hobbs, B.
+Hobbs, B. 
 2
 18
 19
@@ -5151,7 +5152,7 @@ Jenkins, BarryH
 116
 255
 119
-Jenkins, TheresaR.
+Jenkins, TheresaR. 
 9
 128
 218
@@ -5214,7 +5215,7 @@ Johnson, JonK
 44
 148
 60
-Johnson, Jr., AnthonyJ
+Johnson, Jr. , AnthonyJ
 34
 94
 227
@@ -5361,7 +5362,7 @@ Juge, ChristopherH
 52
 213
 98
-Jung, P.H
+Jung, P. H
 5
 103
 202
@@ -5578,28 +5579,28 @@ Key, Christal
 160
 335
 0
-Kidd, M.S
+Kidd, M. S
 0
 0
 1
 1
 1
 1
-Kidd, M.S
+Kidd, M. S
 0
 1
 1
 0
 2
 1
-Kidd, M.S
+Kidd, M. S
 1
 2
 2
 0
 3
 0
-Kidd, M.S
+Kidd, M. S
 0
 0
 1
@@ -5627,7 +5628,7 @@ Kim, Mark
 113
 301
 80
-Kim, T.
+Kim, T. 
 31
 111
 263
@@ -5641,7 +5642,7 @@ Kimball, Peter
 124
 273
 88
-King, Jr., WilliamJ
+King, Jr. , WilliamJ
 22
 110
 186
@@ -5872,7 +5873,7 @@ Krappa, DonnaA
 80
 274
 59
-Krasnow, M.
+Krasnow, M. 
 10
 69
 224
@@ -5921,7 +5922,7 @@ Kurtz, David
 103
 262
 78
-Kwon, K.
+Kwon, K. 
 40
 118
 185
@@ -6145,7 +6146,7 @@ Larner, MichaelL
 131
 290
 74
-LaRocheJr., RoyE
+LaRocheJr. , RoyE
 24
 98
 253
@@ -6376,7 +6377,7 @@ Levine, JayE
 78
 170
 180
-Levine, JodiB.
+Levine, JodiB. 
 12
 192
 278
@@ -6999,7 +7000,7 @@ Mason, JohnR
 48
 248
 107
-Mason, Jr., DavidA
+Mason, Jr. , DavidA
 35
 142
 210
@@ -7083,7 +7084,7 @@ Matulewicz, DennisM
 65
 364
 106
-Mauer, MarilynS.
+Mauer, MarilynS. 
 9
 115
 199
@@ -7202,7 +7203,7 @@ McGhee, CarlC
 82
 315
 189
-McGinn, V.Paul
+McGinn, V. Paul
 11
 200
 286
@@ -7279,7 +7280,7 @@ McLaughlin, CorinneT
 97
 210
 64
-McLean, JennieL.
+McLean, JennieL. 
 5
 69
 131
@@ -7349,7 +7350,7 @@ Mein, ChristinaY
 136
 272
 152
-Meisburg, Jr., JohnM
+Meisburg, Jr. , JohnM
 8
 160
 213
@@ -7594,7 +7595,7 @@ Minter, CynthiaA
 58
 269
 62
-Misenti, VincentA.
+Misenti, VincentA. 
 8
 70
 208
@@ -7650,7 +7651,7 @@ Montano, DonnaM
 91
 246
 199
-Moore, C.F.
+Moore, C. F. 
 6
 205
 256
@@ -7769,7 +7770,7 @@ Morriss, EdwardT
 208
 282
 95
-Morrow, MaryD.
+Morrow, MaryD. 
 26
 121
 267
@@ -7818,7 +7819,7 @@ Mulvey, JudeB
 52
 103
 54
-Munday, H.
+Munday, H. 
 21
 75
 191
@@ -7860,7 +7861,7 @@ Murgo, Rudolph
 110
 181
 100
-Murray, S.Charles
+Murray, S. Charles
 53
 153
 266
@@ -8364,7 +8365,7 @@ Parnow, MaryP
 113
 305
 195
-Parrish, KimD.
+Parrish, KimD. 
 18
 213
 318
@@ -8378,7 +8379,7 @@ Parrish, LisaB
 136
 281
 171
-Paschall, AnnG.
+Paschall, AnnG. 
 21
 192
 333
@@ -8406,7 +8407,7 @@ Patterson, TroyM
 55
 183
 13
-Payne, R.J
+Payne, R. J
 1
 14
 23
@@ -8532,7 +8533,7 @@ Petersen, CraigR
 168
 344
 94
-Petri, J.
+Petri, J. 
 18
 112
 257
@@ -8560,7 +8561,7 @@ Phillips, DerekN
 114
 336
 100
-Pickett, D.L
+Pickett, D. L
 26
 126
 265
@@ -8637,14 +8638,14 @@ Pillion, MartyR
 29
 207
 251
-Piloseno, Jr., DanielA
+Piloseno, Jr. , DanielA
 12
 263
 297
 34
 349
 104
-Pines, S.
+Pines, S. 
 15
 119
 169
@@ -8791,7 +8792,7 @@ Prince, JohnM
 51
 237
 68
-Prinsloo, C.H
+Prinsloo, C. H
 13
 81
 142
@@ -8952,7 +8953,7 @@ Reamon, WilliamG
 162
 341
 108
-Reap, J.D
+Reap, J. D
 33
 141
 264
@@ -8973,7 +8974,7 @@ Reeves, Anthony
 46
 121
 22
-Reeves, M.
+Reeves, M. 
 4
 26
 40
@@ -9449,7 +9450,7 @@ Schafer, Mark
 198
 342
 140
-Schallner, SherryL.
+Schallner, SherryL. 
 16
 156
 284
@@ -9582,7 +9583,7 @@ Self, Leisha
 55
 248
 76
-Selland, R.Dirk
+Selland, R. Dirk
 2
 78
 161
@@ -9687,7 +9688,7 @@ Sheperd, Reuben
 121
 314
 108
-Shepherd, LarryD.
+Shepherd, LarryD. 
 11
 119
 310
@@ -10002,7 +10003,7 @@ Solomon, Mark
 130
 264
 72
-Soltes, Jr., AndrewJ.
+Soltes, Jr. , AndrewJ. 
 43
 115
 213
@@ -10128,7 +10129,7 @@ Staller, ScottM
 144
 297
 122
-Stalley, D.B
+Stalley, D. B
 2
 124
 155
@@ -10310,7 +10311,7 @@ Stueve, TimothyG
 92
 148
 211
-Stults, DouglasS.
+Stults, DouglasS. 
 3
 214
 306
@@ -10569,14 +10570,14 @@ Thompson, DavidW
 145
 267
 111
-Thompson, EdwardL.
+Thompson, EdwardL. 
 24
 135
 292
 157
 372
 11
-Thompson, Jr., JohnD.
+Thompson, Jr. , JohnD. 
 0
 11
 32
@@ -10954,7 +10955,7 @@ Viera-Vargas, AngelX
 20
 82
 274
-VillereJr., PlaucheF
+VillereJr. , PlaucheF
 30
 304
 391
@@ -11178,7 +11179,7 @@ Waters, CarlaL
 125
 293
 73
-Watkins, GlenH.
+Watkins, GlenH. 
 5
 78
 271
@@ -11416,7 +11417,7 @@ Whetsel, Michelle
 147
 280
 123
-Whitaker, T.
+Whitaker, T. 
 7
 130
 211
@@ -11507,21 +11508,21 @@ Williams, JamesE
 135
 288
 77
-Williams, Jr., HarryL
+Williams, Jr. , HarryL
 6
 83
 115
 32
 146
 0
-Williams, Jr., HarryL
+Williams, Jr. , HarryL
 0
 0
 1
 1
 1
 102
-Williams, Jr., Major
+Williams, Jr. , Major
 2
 104
 129
@@ -11570,14 +11571,14 @@ Willy, DonaldJ
 138
 342
 2
-Wilson, GregoryM.
+Wilson, GregoryM. 
 0
 2
 2
 0
 2
 41
-Wilson, GregoryM.
+Wilson, GregoryM. 
 10
 51
 173
@@ -11675,7 +11676,7 @@ Wojciechowski, JohnW
 61
 170
 137
-Wolfe, J.Doug
+Wolfe, J. Doug
 39
 176
 209
@@ -11934,7 +11935,7 @@ Zisook, SheldonP
 77
 165
 110
-Zuber, WilliamC.
+Zuber, WilliamC. 
 6
 116
 224
