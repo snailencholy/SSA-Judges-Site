@@ -14,7 +14,7 @@ import { useTheme } from '@material-ui/core/styles';
 
 
 //This is where elements I've made myself will be imported.
-import logo from "../../assets/images.png";
+import logo from "../../assets/mynewwallpaper.jpg";
 
 function ElevationScroll(props) {
     const { children } = props;
@@ -74,6 +74,8 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+
+
 export default function Header(props) {
     const classes = useStyles();
     const theme = useTheme();
@@ -102,6 +104,38 @@ export default function Header(props) {
         setAnchorEl(null)
         setOpen(false)
     };
+
+    useEffect(() =>{
+        switch(window.location.pathname){
+            case "/": 
+                if (value !== 0) {
+                    setValue(0)
+                }
+                break;
+            case "/about":
+                if (value !== 1) {
+                    setValue(1)
+                }
+                break;
+            case "/contact":
+                if (value !==2) {
+                    setValue(2)
+                }
+                break;
+            default:
+                break;
+        }
+    }, [value]);
+
+    const tabs = (
+        <React.Fragment>
+            <Tabs
+            value={value}
+            >
+                <Tab></Tab>
+            </Tabs>
+        </React.Fragment>
+    );
 
     return(
         <React.Fragment>
