@@ -14,7 +14,7 @@ import { useTheme } from '@material-ui/core/styles';
 
 
 //This is where elements I've made myself will be imported.
-import logo from "../../assets/mynewwallpaper.jpg";
+import logo from "../../assets/Graphic.png";
 
 function ElevationScroll(props) {
     const { children } = props;
@@ -131,8 +131,28 @@ export default function Header(props) {
         <React.Fragment>
             <Tabs
             value={value}
+            onChange={handleChange}
+            className={classes.tabContainer}
+            indicatorColor="primary"
             >
-                <Tab></Tab>
+                <Tab
+                 className={classes.tab}
+                 component={Link}
+                 to="/"
+                 label="Home"
+                />
+                <Tab
+                 className={classes.tab}
+                 component={Link}
+                 to="/about"
+                 label="About Us"
+                />
+                <Tab
+                 className={classes.tab}
+                 component={Link}
+                 to="/contact"
+                 label="Contact Us"
+                />
             </Tabs>
         </React.Fragment>
     );
@@ -150,10 +170,13 @@ export default function Header(props) {
                         >
                             <img alt="company logo" className={classes.logo} src={logo}/>
                         </Button>
-                    </Toolbar>
+                        
+                        {matches ? null : tabs}
 
+                    </Toolbar>
                 </AppBar>
             </ElevationScroll>
+            <div className={classes.toolbarMargin} />
         </React.Fragment>
     );
 }
