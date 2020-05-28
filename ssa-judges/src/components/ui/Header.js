@@ -14,7 +14,7 @@ import { useTheme } from '@material-ui/core/styles';
 
 
 //This is where elements I've made myself will be imported.
-import logo from "../../assets/Graphic.png";
+import logo from "../../assets/LOGO-2.png";
 
 function ElevationScroll(props) {
     const { children } = props;
