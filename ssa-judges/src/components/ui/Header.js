@@ -8,9 +8,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import { useTheme } from '@material-ui/core/styles';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 //This is where elements I've made myself will be imported.
@@ -32,13 +33,13 @@ function ElevationScroll(props) {
 const useStyles = makeStyles((theme) => ({
     toolbarMargin: {
         ...theme.mixins.toolbar,
-        marginBottom: "3em",
+        marginBottom: "3.5em",
         [theme.breakpoints.down("md")]: {
-            marginBottom: "2em"
+            marginBottom: "2.5em"
         },
 
         [theme.breakpoints.down("xs")]: {
-            marginBottom: "1.25em"
+            marginBottom: "2em"
         },
     },
 
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     logoContainer: {
-        padding: 0,
+        Padding: 0,
         "&:hover": {
             backgroundColor: "transparent",
         },
@@ -66,8 +67,20 @@ const useStyles = makeStyles((theme) => ({
     tab: {
         ...theme.typography.tab,
         minWidth: 10,
-        marginLeft: "250px",
-        marginRight: "250px",
+        marginLeft: "150px",
+        marginRight: "150px",
+    },
+
+    drawerIconContainer: {
+        marginLeft: "auto",
+        "&:hover": {
+            backgroundColor: "transparent",
+        },
+    },
+
+    drawerIcon: {
+        height: "50px",
+        width: "50px",
     },
 
 
@@ -78,31 +91,17 @@ const useStyles = makeStyles((theme) => ({
 export default function Header(props) {
     const classes = useStyles();
     const theme = useTheme();
+    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
     const matches = useMediaQuery(theme.breakpoints.down("md"));
-    const [value, setValue] = useState(0);
-    const [anchorEl, setAnchorEl] = useState(null);
-    const [open, setOpen] = useState(false);
-    const [seclectedIndex ,setSelectedIndex] = useState(0);
+    const [openDrawer, setOpenDrawer] = useState(false)
 
+
+    const [value, setValue] = useState(0);
+    
     const handleChange = (e, value) => {
         setValue(value);
     };
 
-    const handleClick = (e) => {
-        setAnchorEl(e.currentTarget)
-        setOpen(true)
-    };
-
-    const handleMenuItemClick = (e,i) => {
-        setAnchorEl(null);
-        setOpen(false);
-        setSelectedIndex(i)
-    };
-
-    const handleClose = (e) => {
-        setAnchorEl(null)
-        setOpen(false)
-    };
     
     //Trying to force a git push
     useEffect(() =>{
@@ -155,7 +154,28 @@ export default function Header(props) {
                 />
             </Tabs>
         </React.Fragment>
-    );
+    )
+
+    const drawer = (
+        <React.Fragment>
+            <SwipeableDrawer
+            disableBackdropTransition={!iOS}
+            disableDiscovery={iOS}
+            open={openDrawer}
+            onClose={() => setOpenDrawer(false)}
+            onOpen = {() => setOpenDrawer}
+            >
+                Example Drawer
+            </SwipeableDrawer>
+            <IconButton
+            className={classes.drawerIconContainer}
+            onClick={() => setOpenDrawer(!openDrawer)}
+            disableRipple
+            >
+                <MenuIcon className={classes.drawerIcon} />
+            </IconButton>
+        </React.Fragment>
+    )
 
     return(
         <React.Fragment>
@@ -174,7 +194,7 @@ export default function Header(props) {
                             <img alt="company logo" className={classes.logo} src={logo}/>
                         </Button>
                         
-                        {matches ? null : tabs}
+                        {matches ? drawer : tabs}
 
                     </Toolbar>
                 </AppBar>

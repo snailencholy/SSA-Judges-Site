@@ -1,6 +1,8 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const headerBurgundy = "#53120F"
+const headerNavy = "#13152A"
+const headerBlue = "#CFD0F8"
 const headerRed  = "#DC2523"
 const headerWhite = "#FFFFFF"
 
@@ -12,7 +14,7 @@ export default createMuiTheme({
             white: `${headerWhite}`
         },
         primary: {
-            main: `${headerBurgundy}`
+            main: `${headerBlue}`
         },
         secondary: {
             main: `${headerRed}`
