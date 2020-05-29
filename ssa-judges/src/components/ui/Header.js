@@ -103,7 +103,8 @@ export default function Header(props) {
         setAnchorEl(null)
         setOpen(false)
     };
-
+    
+    //Trying to force a git push
     useEffect(() =>{
         switch(window.location.pathname){
             case "/": 
