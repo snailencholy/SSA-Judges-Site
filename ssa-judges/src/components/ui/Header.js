@@ -60,15 +60,14 @@ const useStyles = makeStyles((theme) => ({
     },
 
     tabContainer: {
-        marginLeft: "auto",
+       marginLeft: "auto",
     },
 
     tab: {
-        ...theme.typography,
-        borderRadius: "50px",
-        marginLeft: "50px",
-        marginRight: "25px",
-        height: "45px",
+        ...theme.typography.tab,
+        minWidth: 10,
+        marginLeft: "250px",
+        marginRight: "250px",
     },
 
 
@@ -166,7 +165,10 @@ export default function Header(props) {
                 >
                     <Toolbar disableGutters>
                         <Button
-                        color="secondary"
+                        component={Link}
+                        to="/"
+                        onClick={() => setValue(0)}
+                        className={classes.logoContainer}
                         >
                             <img alt="company logo" className={classes.logo} src={logo}/>
                         </Button>
