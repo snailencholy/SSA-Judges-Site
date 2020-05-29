@@ -9,20 +9,28 @@ const headerWhite = "#FFFFFF"
 export default createMuiTheme({
     palette: {
         common: {
-            blue: `${headerBurgundy}`,
+            burgundy: `${headerBurgundy}`,
+            navy: `${headerNavy}`,
+            blue: `${headerBlue}`,
             red: `${headerRed}`,
             white: `${headerWhite}`
         },
         primary: {
-            main: `${headerBlue}`
+            main: `${headerNavy}`
         },
         secondary: {
-            main: `${headerRed}`
+            main: `${headerNavy}`
         },
     },
     //Trying to force commits
     typography: {
         tab: {
+            fontFamily: "Libre Baskerville",
+            textTransform: "none",
+            fontweight: "400",
+            fontSize: "1rem",
+        },
+        paragraph: {
             fontFamily: "Libre Baskerville",
             textTransform: "none",
             fontweight: "400",

@@ -15,7 +15,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 
 //This is where elements I've made myself will be imported.
-import logo from "../../assets/LOGO-2.png";
+import logo from "../../assets/LOGO-BLUE_YELLOW.png";
 
 function ElevationScroll(props) {
     const { children } = props;
@@ -67,8 +67,9 @@ const useStyles = makeStyles((theme) => ({
     tab: {
         ...theme.typography.tab,
         minWidth: 10,
-        marginLeft: "150px",
-        marginRight: "150px",
+        marginLeft: "50px",
+        marginRight: "50px",
+        
     },
 
     drawerIconContainer: {
@@ -82,6 +83,11 @@ const useStyles = makeStyles((theme) => ({
         height: "50px",
         width: "50px",
     },
+
+    navBarParagraph: {
+        ...theme.typography.paragraph,
+        marginLeft: "50px"
+    }
 
 
 }));
@@ -152,6 +158,7 @@ export default function Header(props) {
                  to="/contact"
                  label="Contact Us"
                 />
+                
             </Tabs>
         </React.Fragment>
     )
@@ -193,7 +200,11 @@ export default function Header(props) {
                         >
                             <img alt="company logo" className={classes.logo} src={logo}/>
                         </Button>
-                        
+                        <p 
+                         className={classes.navBarParagraph}
+                        >
+                            SEAN F. HAMPTON, ESQ.
+                        </p>
                         {matches ? drawer : tabs}
 
                     </Toolbar>
