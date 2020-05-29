@@ -12,6 +12,9 @@ import { useTheme } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 
 //This is where elements I've made myself will be imported.
@@ -33,14 +36,15 @@ function ElevationScroll(props) {
 const useStyles = makeStyles((theme) => ({
     toolbarMargin: {
         ...theme.mixins.toolbar,
-        marginBottom: "3.5em",
+        marginBottom: "5em",
         [theme.breakpoints.down("md")]: {
-            marginBottom: "2.5em"
+            marginBottom: "5em"
         },
 
         [theme.breakpoints.down("xs")]: {
-            marginBottom: "2em"
+            marginBottom: "5em"
         },
+
     },
 
     logo: {
@@ -67,8 +71,8 @@ const useStyles = makeStyles((theme) => ({
     tab: {
         ...theme.typography.tab,
         minWidth: 10,
-        marginLeft: "50px",
-        marginRight: "50px",
+        marginLeft: "10em",
+        marginRight: "10em",
         
     },
 
@@ -82,6 +86,26 @@ const useStyles = makeStyles((theme) => ({
     drawerIcon: {
         height: "50px",
         width: "50px",
+    },
+
+    drawer: {
+        backgroundColor: theme.palette.common.navy
+    },
+
+    drawerItem: {
+        ...theme.typography.tab,
+        color: "white",
+        opacity: 0.7,
+    },
+
+    drawerItemSelected: {
+        "&.MuiListItemText-root": {
+            opacity: 1,
+        },
+    },
+
+    appBar: {
+        zIndex: 1302,
     },
 
     navBarParagraph: {
@@ -103,33 +127,32 @@ export default function Header(props) {
 
 
     const [value, setValue] = useState(0);
+    const [selectedIndex, setSelectedIndex] =  useState(0);
     
     const handleChange = (e, value) => {
         setValue(value);
     };
 
+
+    const routes = [
+        {name: "Home", link: "/", activeIndex: 0},
+        {name: "About Us", link: "/about", activeIndex: 1},
+        {name: "Contact Us", link: "/contact", activeIndex: 2}
+    ];
     
-    //Trying to force a git push
+    
     useEffect(() =>{
-        switch(window.location.pathname){
-            case "/": 
-                if (value !== 0) {
-                    setValue(0)
-                }
-                break;
-            case "/about":
-                if (value !== 1) {
-                    setValue(1)
-                }
-                break;
-            case "/contact":
-                if (value !==2) {
-                    setValue(2)
-                }
-                break;
-            default:
-                break;
-        }
+        [...routes].forEach(route => {
+            switch(window.location.pathname){
+                case `${route.link}`:
+                    if(value !== route.activeIndex) {
+                        setValue(route.activeIndex)
+                        if(route.selectedIndex && route.selectedIndex !== selectedIndex) {//check if selectedIndex exists and then check if its the correct index.
+                            setSelectedIndex(route.selectedIndex)
+                        }
+                    }
+            }
+        })
     }, [value]);
 
     const tabs = (
@@ -140,25 +163,16 @@ export default function Header(props) {
             className={classes.tabContainer}
             indicatorColor="primary"
             >
-                <Tab
-                 className={classes.tab}
-                 component={Link}
-                 to="/"
-                 label="Home"
-                />
-                <Tab
-                 className={classes.tab}
-                 component={Link}
-                 to="/about"
-                 label="About Us"
-                />
-                <Tab
-                 className={classes.tab}
-                 component={Link}
-                 to="/contact"
-                 label="Contact Us"
-                />
-                
+
+                {routes.map((route, index) =>(
+                    <Tab
+                    key={`${route}${index}`}
+                    className={classes.tab}
+                    component={Link}
+                    label={route.name}
+                    to={route.link}
+                    />
+                ))}
             </Tabs>
         </React.Fragment>
     )
@@ -171,8 +185,30 @@ export default function Header(props) {
             open={openDrawer}
             onClose={() => setOpenDrawer(false)}
             onOpen = {() => setOpenDrawer}
+            classes={{paper: classes.drawer}}
             >
-                Example Drawer
+                
+                <List disablePadding>
+                    {routes.map((route, index) => (
+                        <ListItem
+                         divider
+                         key={`${route}${route.activeIndex}`}
+                         button
+                         component={Link}
+                         to={route.link}
+                         selected={value === route.activeIndex} //Checks the value of the highlighted tab in the list
+                         classes={{selected: classes.drawerItemSelected}}
+                         onClick={() => {setOpenDrawer(false); setValue(route.activeIndex)}} //Sets the value of the highlighted tab in the list
+                        >
+                            <ListItemText
+                             className={classes.drawerItem}
+                             disableTypography
+                            >
+                                {route.name}
+                            </ListItemText>
+                        </ListItem>
+                    ))}
+                </List>
             </SwipeableDrawer>
             <IconButton
             className={classes.drawerIconContainer}
@@ -183,11 +219,14 @@ export default function Header(props) {
             </IconButton>
         </React.Fragment>
     )
+    
+    
 
     return(
         <React.Fragment>
             <ElevationScroll>
                 <AppBar
+                classname={classes.appBar}
                 position="fixed"
                 color="primary"
                 >
@@ -203,7 +242,9 @@ export default function Header(props) {
                         <p 
                          className={classes.navBarParagraph}
                         >
-                            SEAN F. HAMPTON, ESQ.
+                            SEAN F. HAMPTON, ESQ.<br/><br/>
+                            (251) 767-7266 <br/><br/>
+                            sean@hamptonjdlaw.com
                         </p>
                         {matches ? drawer : tabs}
 

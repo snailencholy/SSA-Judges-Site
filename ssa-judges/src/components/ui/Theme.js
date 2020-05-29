@@ -27,7 +27,7 @@ export default createMuiTheme({
         tab: {
             fontFamily: "Libre Baskerville",
             textTransform: "none",
-            fontweight: "400",
+            fontweight: "700",
             fontSize: "1rem",
         },
         paragraph: {
