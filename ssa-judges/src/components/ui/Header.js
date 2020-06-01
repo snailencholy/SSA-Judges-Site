@@ -106,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
 
     appBar: {
         zIndex: 1302,
+        position: "realtive",
     },
 
     navBarParagraph: {
