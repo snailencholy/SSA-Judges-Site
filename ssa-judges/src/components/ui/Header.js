@@ -73,6 +73,23 @@ const useStyles = makeStyles((theme) => ({
         minWidth: 10,
         marginLeft: "10em",
         marginRight: "10em",
+
+        [theme.breakpoints.down("lg")]: {
+            marginLeft: "7em",
+            marginRight: "7em"
+        },
+
+        [theme.breakpoints.down("md")]: {
+            marginLeft: "5em",
+            marginRight: "5em",
+        },
+
+        [theme.breakpoints.down("sm")]: {
+            marginLeft: "3em",
+            marginRight: "3em",
+        },
+
+        
         
     },
 
@@ -105,8 +122,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     appBar: {
-        zIndex: 1302,
-        position: "realtive",
+        zIndex: theme.zIndex.modal +1,
+        
     },
 
     navBarParagraph: {
@@ -117,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-// did a thing
+
 
 export default function Header(props) {
     const classes = useStyles();
@@ -127,11 +144,9 @@ export default function Header(props) {
     const [openDrawer, setOpenDrawer] = useState(false)
 
 
-    const [value, setValue] = useState(0);
-    const [selectedIndex, setSelectedIndex] =  useState(0);
     
     const handleChange = (e, value) => {
-        setValue(value);
+        props.setValue(value);
     };
 
 
@@ -146,20 +161,23 @@ export default function Header(props) {
         [...routes].forEach(route => {
             switch(window.location.pathname){
                 case `${route.link}`:
-                    if(value !== route.activeIndex) {
-                        setValue(route.activeIndex)
-                        if(route.selectedIndex && route.selectedIndex !== selectedIndex) {//check if selectedIndex exists and then check if its the correct index.
-                            setSelectedIndex(route.selectedIndex)
+                    if(props.value !== route.activeIndex) {
+                        props.setValue(route.activeIndex)
+                        if(route.selectedIndex && route.selectedIndex !== props.selectedIndex) {//check if selectedIndex exists and then check if its the correct index.
+                            props.setSelectedIndex(route.selectedIndex)
                         }
                     }
+                    break;
+                    default:
+                        break;
             }
         })
-    }, [value]);
+    }, [props.value, props.selectedIndex, routes, props]);
 
     const tabs = (
         <React.Fragment>
             <Tabs
-            value={value}
+            value={props.value}
             onChange={handleChange}
             className={classes.tabContainer}
             indicatorColor="primary"
@@ -197,9 +215,9 @@ export default function Header(props) {
                          button
                          component={Link}
                          to={route.link}
-                         selected={value === route.activeIndex} //Checks the value of the highlighted tab in the list
+                         selected={props.value === route.activeIndex} //Checks the value of the highlighted tab in the list
                          classes={{selected: classes.drawerItemSelected}}
-                         onClick={() => {setOpenDrawer(false); setValue(route.activeIndex)}} //Sets the value of the highlighted tab in the list
+                         onClick={() => {setOpenDrawer(false); props.setValue(route.activeIndex)}} //Sets the value of the highlighted tab in the list
                         >
                             <ListItemText
                              className={classes.drawerItem}
@@ -235,7 +253,7 @@ export default function Header(props) {
                         <Button
                         component={Link}
                         to="/"
-                        onClick={() => setValue(0)}
+                        onClick={() => props.setValue(0)}
                         className={classes.logoContainer}
                         >
                             <img alt="company logo" className={classes.logo} src={logo}/>
