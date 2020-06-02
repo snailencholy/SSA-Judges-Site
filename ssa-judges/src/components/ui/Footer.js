@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     footer: {
         backgroundColor: theme.palette.common.navy,
         Padding: 0,
+        marginBottom: 0,
         width: "100%",
         Zindex: 1302,
         position: "relative",
@@ -20,8 +21,20 @@ const useStyles = makeStyles((theme) => ({
         height: "5em",
         verticalAlign: "bottom",
         [theme.breakpoints.down("md")]: {
-            width: "21em",
+            width: "5em",
+            height: "5em",
         },
+
+        [theme.breakpoints.down("sm")]: {
+            width: "3em",
+            height: "3em",
+        },
+
+        [theme.breakpoints.down("sm")]: {
+            width: "2em",
+            height: "2em",
+        },
+
     },
 
     mainContainer: {
@@ -37,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     gridItem: {
-        margin: "3em",
+        margin: "1em",
     },
 
 }));
@@ -49,7 +62,7 @@ export default function Footer(props) {
         <footer className={classes.footer}>
                 <Grid container justify="center" className={classes.mainContainer}>
                     <Grid item className={classes.gridItem}>
-                        <Grid container direction="column" spacing={2}>
+                        <Grid container direction="column" >
                             <Grid
                              item
                              component={Link}

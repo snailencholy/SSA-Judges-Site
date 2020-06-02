@@ -5,6 +5,7 @@ const headerNavy = "#13152A"
 const headerBlue = "#CFD0F8"
 const headerRed  = "#DC2523"
 const headerWhite = "#FFFFFF"
+const buttonYellow = "#F8DF31"
 
 export default createMuiTheme({
     palette: {
@@ -13,13 +14,14 @@ export default createMuiTheme({
             navy: `${headerNavy}`,
             blue: `${headerBlue}`,
             red: `${headerRed}`,
-            white: `${headerWhite}`
+            white: `${headerWhite}`,
+            yellow: `${buttonYellow}`,
         },
         primary: {
             main: `${headerNavy}`
         },
         secondary: {
-            main: `${headerNavy}`
+            main: `${buttonYellow}`
         },
     },
     //Trying to force commits
@@ -36,10 +38,28 @@ export default createMuiTheme({
             fontweight: "400",
             fontSize: "1rem",
         },
+        
+        landingPageParagraph: {
+            fontFamily: "Libre Baskerville",
+            textTransform: "none",
+            fontweight: "700",
+            fontSize: "2rem",
+
+        },
+
+        searchBar: {
+            fontFamily: "Libre Baskerville",
+            textTransform: "none",
+            fontweight: "400",
+            fontSize: "1rem",
+        },
     },
     
-    logoButton: {
-        color: "white",
-    },
+    requestButton: {
+        fontFamily: "Libre Baskerville",
+        textTransform: "none",
+        fontweight: "400",
+        fontSize: "1rem",
+    }
 
 });
