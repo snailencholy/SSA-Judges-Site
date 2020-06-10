@@ -36,13 +36,17 @@ function ElevationScroll(props) {
 const useStyles = makeStyles((theme) => ({
     toolbarMargin: {
         ...theme.mixins.toolbar,
-        marginBottom: "5em",
+        marginBottom: "8em",
         [theme.breakpoints.down("md")]: {
+            marginBottom: "7em"
+        },
+
+        [theme.breakpoints.down("sm")]: {
             marginBottom: "4em"
         },
 
         [theme.breakpoints.down("xs")]: {
-            marginBottom: "3em"
+            marginBottom: "4em"
         },
 
     },
@@ -66,6 +70,16 @@ const useStyles = makeStyles((theme) => ({
 
     tabContainer: {
        marginLeft: "auto",
+
+       [theme.breakpoints.down("md")]: {
+           marginLeft: ".25em",
+           marginRight: "5em",
+       },
+
+       [theme.breakpoints.down("sm")]: {
+           marginLeft: ".05em",
+           marginRight: "5em",
+       }
     },
 
     tab: {
@@ -80,16 +94,23 @@ const useStyles = makeStyles((theme) => ({
         },
 
         [theme.breakpoints.down("md")]: {
-            marginLeft: "5em",
-            marginRight: "5em",
+            minWidth: 1,
+            fontSize: ".25rem",
+            marginLeft: "2em",
+            marginRight: "2em",
         },
 
         [theme.breakpoints.down("sm")]: {
-            marginLeft: "3em",
-            marginRight: "3em",
+            fontSize: ".25rem",
+            minWidth: 0,
+            marginLeft: "0.5em",
+            marginRight: "0.5em",
         },
 
-        
+        [theme.breakpoints.down("xs")]: {
+            marginLeft: "0em",
+            marginRight: "0em",
+        },    
         
     },
 
@@ -103,6 +124,7 @@ const useStyles = makeStyles((theme) => ({
     drawerIcon: {
         height: "50px",
         width: "50px",
+        color: "#CFD0F8",
     },
 
     drawer: {
@@ -128,7 +150,17 @@ const useStyles = makeStyles((theme) => ({
 
     navBarParagraph: {
         ...theme.typography.paragraph,
-        marginLeft: "50px"
+        marginLeft: "3em",
+
+        [theme.breakpoints.down("md")]: {
+            fontSize: theme.typography.paragraph.fontSize=".25rem",
+            marginRight: "1em"
+        },
+
+        [theme.breakpoints.down("sm")]: {
+            fontSize: ".5rem",
+            marginRight: "1em"
+        }
     }
 
 
@@ -152,8 +184,8 @@ export default function Header(props) {
 
     const routes = [
         {name: "Home", link: "/", activeIndex: 0},
-        {name: "About Us", link: "/about", activeIndex: 1},
-        {name: "Contact Us", link: "/contact", activeIndex: 2}
+        {name: "Disability Help", link: "/disability", activeIndex: 1},
+        {name: "About Us", link: "/about", activeIndex: 2},
     ];
     
     
@@ -260,6 +292,7 @@ export default function Header(props) {
                         </Button>
                         <p 
                          className={classes.navBarParagraph}
+                         breakpoints={"sm" ? ".5rem" : "1rem"}
                         >
                             SEAN F. HAMPTON, ESQ.<br/><br/>
                             (251) 767-7266 <br/><br/>

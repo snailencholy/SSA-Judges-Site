@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.common.navy,
         Padding: 0,
         marginBottom: 0,
+        marginTop: "2em",
         width: "100%",
         Zindex: 1302,
         position: "relative",
@@ -31,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
         },
 
         [theme.breakpoints.down("sm")]: {
-            width: "2em",
-            height: "2em",
+            width: "3em",
+            height: "3em",
         },
 
     },

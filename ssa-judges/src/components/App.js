@@ -23,8 +23,8 @@ function App() {
         />
           <Switch>
             <Route exact path="/" component={LandingPage} />
+            <Route exact path="/disability" component={() => <div>disability form</div>} />
             <Route exact path="/about" component={() => <div>About Us</div>} />
-            <Route exact path="/contact" component={() => <div>Contact Us</div>} />
           </Switch> 
           <Footer
            value={value}

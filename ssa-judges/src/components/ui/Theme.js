@@ -37,6 +37,7 @@ export default createMuiTheme({
             textTransform: "none",
             fontweight: "400",
             fontSize: "1rem",
+
         },
         
         landingPageParagraph: {
