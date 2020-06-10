@@ -56,11 +56,15 @@ export default createMuiTheme({
         },
     },
     
-    requestButton: {
-        fontFamily: "Libre Baskerville",
-        textTransform: "none",
-        fontweight: "400",
-        fontSize: "1rem",
+    overrides: {
+        MuiInputLabel: {
+            root: {
+                color: headerNavy,
+                fontFamily: "Libre Baskerville",
+                fontWeight: "700",
+                borderColor: headerNavy,
+            }
+        }
     }
 
 });

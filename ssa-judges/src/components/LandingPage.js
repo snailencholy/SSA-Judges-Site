@@ -50,27 +50,29 @@ const useStyles = makeStyles(theme =>({
   },
 
     searchBar: {
-        marginLeft: "35em",
-        marginRight: "35em",
+        marginLeft: "50em",
         marginTop: "1em",
+
+        [theme.breakpoints.down("md")]: {
+            marginLeft: "40em",
+        },
 
         [theme.breakpoints.down("sm")]: {
             marginLeft: "30em",
-            marginRight: "30em",
         },
         
         [theme.breakpoints.down("xs")]: {
-            marginLeft: "7.5em",
-            marginRight: "7.5em",
+            marginLeft: "8em",
             marginTop: "2em",
         },
     },
 
     RequestButton: {
+        maxWidth: "50",
         fontFamily: "Libre Baskerville",
         textTransform: "none",
         marginBottom: "5em",
-        marginLeft: "40em",
+        marginLeft: "52.5em",
         marginRight: "40em",
         borderRadius: 50,
         "&:hover": {

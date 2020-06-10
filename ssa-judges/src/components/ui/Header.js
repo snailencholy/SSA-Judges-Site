@@ -153,12 +153,10 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "3em",
 
         [theme.breakpoints.down("md")]: {
-            fontSize: theme.typography.paragraph.fontSize=".25rem",
             marginRight: "1em"
         },
 
         [theme.breakpoints.down("sm")]: {
-            fontSize: ".5rem",
             marginRight: "1em"
         }
     }
