@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -53,45 +54,51 @@ const useStyles = makeStyles(theme =>({
         marginLeft: "50em",
         marginTop: "1em",
 
+        [theme.breakpoints.down("lg")]: {
+            marginLeft: "32.5em"
+        },
+
         [theme.breakpoints.down("md")]: {
-            marginLeft: "40em",
+            marginLeft: "20em",
         },
 
         [theme.breakpoints.down("sm")]: {
-            marginLeft: "30em",
+            marginLeft: "15em",
         },
         
         [theme.breakpoints.down("xs")]: {
-            marginLeft: "8em",
+            marginLeft: "3.5em",
+            marginRight: "3.5em",
             marginTop: "2em",
         },
     },
 
     RequestButton: {
-        maxWidth: "50",
+        maxWidth: "20",
         fontFamily: "Libre Baskerville",
         textTransform: "none",
         marginBottom: "5em",
         marginLeft: "52.5em",
-        marginRight: "40em",
         borderRadius: 50,
         "&:hover": {
             backgroundColor: theme.palette.secondary.light,
         },
 
+        [theme.breakpoints.down("lg")]: {
+            marginLeft: "35em",
+        },
+
         [theme.breakpoints.down("md")]: {
-            marginRight: "30em",
             marginLeft: "30em",
         },
 
         [theme.breakpoints.down("sm")]: {
-            marginRight: "20em",
             marginLeft: "20em",
         },
 
         [theme.breakpoints.down("xs")]: {
-            marginRight: "10em",
-            marginLeft: "10em",
+            marginLeft: ".5em",
+            mraginRight: ".25em",
         },
     }
 }))
@@ -123,12 +130,14 @@ export default function LandingPage() {
                     </p>
                 </Grid>
             </Grid>
-            <Button 
+            <Button
+             component={Link}
+             to="/disability"
              variant="contained"
              color="secondary"
              className={classes.RequestButton}
             >
-                Click here for help applying for SSA Disability
+                Click here for help applying for Disability
             </Button>
         </div>
     )

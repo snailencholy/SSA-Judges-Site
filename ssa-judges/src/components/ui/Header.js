@@ -119,6 +119,10 @@ const useStyles = makeStyles((theme) => ({
         "&:hover": {
             backgroundColor: "transparent",
         },
+
+        [theme.breakpoints.down("xs")]: {
+            marginLeft: "1.5em",
+        },
     },
 
     drawerIcon: {
@@ -151,6 +155,7 @@ const useStyles = makeStyles((theme) => ({
     navBarParagraph: {
         ...theme.typography.paragraph,
         marginLeft: "3em",
+        textTransform: "none",
 
         [theme.breakpoints.down("md")]: {
             marginRight: "1em"
@@ -158,9 +163,17 @@ const useStyles = makeStyles((theme) => ({
 
         [theme.breakpoints.down("sm")]: {
             marginRight: "1em"
-        }
-    }
+        },
 
+        [theme.breakpoints.down("xs")]: {
+            marginRight: "0",
+            fontSize: ".5rem",
+        },
+    },
+    
+    linkStyle: {
+        textTransform: "none"
+    }
 
 }));
 
@@ -292,7 +305,7 @@ export default function Header(props) {
                          className={classes.navBarParagraph}
                          breakpoints={"sm" ? ".5rem" : "1rem"}
                         >
-                            SEAN F. HAMPTON, ESQ.<br/><br/>
+                            <a textTransform="none" href="https://www.mobiledisabilitylawyer.com/">SEAN F. HAMPTON, ESQ.</a><br/><br/>
                             (251) 767-7266 <br/><br/>
                             sean@hamptonjdlaw.com
                         </p>
