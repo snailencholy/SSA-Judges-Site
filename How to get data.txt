@@ -1,0 +1,13 @@
+A JSON file will be created from the xml file.
+
+For now navigate to https://www.ssa.gov/appeals/DataSets/03_ALJ_Disposition_Data.xml
+copy everything except the  "This XML file does not appear to have any style information associated with it. The document tree is shown below."
+Paste it into the judge-data.xml file
+
+make sure you are in the ssa-judges directory 
+type "npm run convert" into your favorite terminal. I use cmder. 
+
+A JSON file will be made.
+
+This should be done once a month to keep up with the latest data. 
+New data seems to be released on the 29th.
