@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+const Judge = "../public/judges.json"
+
 const useStyles = makeStyles(theme =>({
     paragraphStyle: {
         ...theme.typography.landingPageParagraph,
@@ -107,6 +109,11 @@ export default function LandingPage() {
     const classes = useStyles();
     const theme = useTheme();
 
+    const filters = {
+        searchText: ""
+    }
+
+
 
     return(
         <div className={classes.bodyStyle}>
@@ -114,10 +121,12 @@ export default function LandingPage() {
                 <Grid container direction="row" alignItems="center" className={classes.searchBar}>
                     <TextField
                      className={classes.root}
+                     id="judge-search"
                      label="Judge's Name"
                      type="search"
                      variant="outlined"
                     />
+                    <div id="Judge"></div>
                 </Grid>
                 <Grid container>
                     <p className={classes.paragraphStyle}>
