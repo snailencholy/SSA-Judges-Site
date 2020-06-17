@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const Judge = "../public/judges.json"
+//import Judge from "judges.js"
 
 const useStyles = makeStyles(theme =>({
     paragraphStyle: {
@@ -108,12 +108,18 @@ const useStyles = makeStyles(theme =>({
 export default function LandingPage() {
     const classes = useStyles();
     const theme = useTheme();
+    const [name, setName] = useState("")    
+    let judgeArray = []
 
-    const filters = {
-        searchText: ""
+    //Building this to build objects because the json file is a bust.
+    function createJudgeData() {
+        const data = fetch(".../judge-data-xml.xml")
+        data.forEach(() => {
+            //regular expression for lines I'm looking for
+
+            //build an array of objects that have that info
+        })
     }
-
-
 
     return(
         <div className={classes.bodyStyle}>
@@ -121,6 +127,8 @@ export default function LandingPage() {
                 <Grid container direction="row" alignItems="center" className={classes.searchBar}>
                     <TextField
                      className={classes.root}
+                     value={name}
+                     onChange={(e) => setName(e.target.value)}
                      id="judge-search"
                      label="Judge's Name"
                      type="search"
