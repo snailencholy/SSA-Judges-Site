@@ -5,7 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-//import Judge from "judges.js"
+const fs = require("fs");
+const readline = require("readline");
 
 const useStyles = makeStyles(theme =>({
     paragraphStyle: {
@@ -108,17 +109,23 @@ const useStyles = makeStyles(theme =>({
 export default function LandingPage() {
     const classes = useStyles();
     const theme = useTheme();
-    const [name, setName] = useState("")    
-    let judgeArray = []
+    const [name, setName] = useState("")  
+    const judges = [{}] 
 
-    //Building this to build objects because the json file is a bust.
-    function createJudgeData() {
-        const data = fetch(".../judge-data-xml.xml")
-        data.forEach(() => {
-            //regular expression for lines I'm looking for
+    async function buildObjects() {
+        const fileStream = fs.createReadStream("../judge-data-xml.xml");
+        
+        const rl = readline.createInterface({
+            input: fileStream,
+            crlfDelay: Infinity
+        });
 
-            //build an array of objects that have that info
-        })
+        for await(const line of rl) {
+            switch (line){
+                case "<FULLY_FAVORABLE>":
+                    favorableData = line.replace("<FULLY_FAVORABLE></FULLY")
+            }
+        }
     }
 
     return(

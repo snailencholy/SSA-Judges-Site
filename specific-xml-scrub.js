@@ -16,8 +16,13 @@ async function buildObjects() {
     });
 
     for await(const line of rl) {
-        console.log(`line from file: ${line}`);
+        
+        if (line.match(/<FULLY_FAVORABLE>([^<]*)<\/FULLY_FAVORABLE>/)) {
+            console.log(`${line}`);
+        }
     }
+        
+    
 }
 
 buildObjects()
