@@ -5,8 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const fs = require("fs");
-const readline = require("readline");
+const json = require("./judge-data.json")
 
 const useStyles = makeStyles(theme =>({
     paragraphStyle: {
@@ -110,23 +109,8 @@ export default function LandingPage() {
     const classes = useStyles();
     const theme = useTheme();
     const [name, setName] = useState("")  
-    const judges = [{}] 
+    
 
-    async function buildObjects() {
-        const fileStream = fs.createReadStream("../judge-data-xml.xml");
-        
-        const rl = readline.createInterface({
-            input: fileStream,
-            crlfDelay: Infinity
-        });
-
-        for await(const line of rl) {
-            switch (line){
-                case "<FULLY_FAVORABLE>":
-                    favorableData = line.replace("<FULLY_FAVORABLE></FULLY")
-            }
-        }
-    }
 
     return(
         <div className={classes.bodyStyle}>
