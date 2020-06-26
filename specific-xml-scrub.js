@@ -5,24 +5,53 @@
 
 const fs = require('fs');
 const readline = require('readline');
-const json = require('./judge-data.json');
-const fetch = require("node-fetch");
+const judgeData = {
+    fullyFavorable: "",
+    name: "",
+    partiallyFavorable: "",
+    totalAwards: "",
+    totalDecisions: "",
+    totalDenials: "",
+    totalDispositions: "",
+}
 
-//let buffer = fs.readFileSync("judge-data-xml.xml", "utf8");
-// async function buildObjects() {
-//     const fileStream = fs.createReadStream('judge-data-xml.xml');
+let judgeArray = []
+
+async function buildObjects() {
+    const fileStream = fs.createReadStream('judge-data-xml.xml');
+    
 
 //     const rl = readline.createInterface({
 //         input: fileStream,
 //         crlfDelay: Infinity
 //     });
 
-//     for await(const line of rl) {
+    i=0
+
+    for await(const line of rl) {
         
-//         if (line.match(/<FULLY_FAVORABLE>([^<]*)<\/FULLY_FAVORABLE>/)) {
-//             console.log(`${line}`);
-//         }
-//     }
+        if (line.match(/<FULLY_FAVORABLE>([^<]*)<\/FULLY_FAVORABLE>/)) {
+            judgeData.fullyFavorable = line;
+            //console.log(judgeData)
+        } else if (line.match(/<JUDGE>([^<]*)<\/JUDGE>/)) {
+            judgeData.name = line;
+        } else if (line.match(/<PARTIALLY_FAVORABLE>([^<]*)<\/PARTIALLY_FAVORABLE>/)) {
+            judgeData.partiallyFavorable = line;
+        } else if (line.match(/<TOTAL_AWARDS>([^<]*)<\/TOTAL_AWARDS>/)) {
+            judgeData.totalAwards = line;
+        } else if (line.match(/<TOTAL_DECISIONS>([^<]*)<\/TOTAL_DECISIONS>/)) {
+            judgeData.totalDecisions = line;
+        } else if (line.match(/<TOTAL_DENIALS>([^<]*)<\/TOTAL_DENIALS>/)) {
+            judgeData.totalDenials = line;
+        } else if (line.match(/<TOTAL_DISPOSITIONS>([^<]*)<\/TOTAL_DISPOSITIONS>/)) {
+            judgeData.totalDispositions = line;
+            judgeArray[i] = judgeData;
+            i++;
+        }
+        //This still doesn't work correctly. look into it. 
+        
+    }
+    console.log(judgeArray)
         
     
 // }
@@ -33,33 +62,5 @@ for (i=0; i < json.row.length; i++) {
     judgeArray[i] = json.row[i]
 }
 
-console.log(judgeArray[12])
-
-// for (i=0; i<json.row.length; i++) {
-//     console.log(json.row[i].JUDGE)
-//     //console.log(json.row[i].TOTAL_DISPOSITIONS)
-//     console.log("Total Dispositions " + json.row[i].TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES)
-//     console.log("Total Decisions " + json.row[i].TOTAL_DECISIONS)
-//     console.log("Total Awards " + json.row[i].TOTAL_AWARDS)
-//     console.log("Total Denials " + json.row[i].TOTAL_DENIALS)
-//     console.log("Fully Favorable " + json.row[i].FULLY_FAVORABLE)
-//     console.log("Partially Favorable " + json.row[i].PARTIALLY_FAVORABLE + "\n")
-    
-// }
-
-
-// let bigJsonString = JSON.stringify(json) 
-// console.log(bigJsonString);
-
-
-// fetch('judge-data.json').then((response) => {
-//     return response.json();
-// })
-// .then((data) => {
-//     console.log(data);
-// })
-// .catch((err) => {
-//     console.log(err);
-// })
-
+console.log(buildObjects())
 
