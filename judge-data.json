@@ -1,9 +1,4 @@
-{
-    "@created": "06/15/2020",
-    "@records": "1743",
-    "title": "Administrative Law Judge Disposition Data",
-    "RPTG_PRD_ENDT": "05/29/2020",
-    "row": [
+[
        {
           "FULLY_FAVORABLE": "222",
           "JUDGE": "Abbondondelo, Mary",
@@ -22664,4 +22659,4 @@
           "TOTAL_DISPOSITIONS": "303"
        }
     ]
- }
+ 
