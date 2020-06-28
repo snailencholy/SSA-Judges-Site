@@ -5,7 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const json = require("./judge-data.json")
+const fs = require("fs");
+const data = fs.readFileSync("./judge-data.json", "utf-8");
+const judgeData = JSON.parse(data)
 
 const useStyles = makeStyles(theme =>({
     paragraphStyle: {
@@ -110,7 +112,12 @@ export default function LandingPage() {
     const theme = useTheme();
     const [name, setName] = useState("")  
     
+    let input = ""
 
+    function filterJudges() {
+        const index = judgeData.findIndex(x => x.JUDGE === input)
+        console.log(`Got it ${judgeData[index].JUDGE}`)
+    }
 
     return(
         <div className={classes.bodyStyle}>
@@ -119,7 +126,6 @@ export default function LandingPage() {
                     <TextField
                      className={classes.root}
                      value={name}
-                     onChange={(e) => setName(e.target.value)}
                      id="judge-search"
                      label="Judge's Name"
                      type="search"
