@@ -26,7 +26,7 @@ let input = "Allen, Michelle I"
 
 //console.log(judgeData.findIndex(x => x.JUDGE === input))
 
-const index = judgeData.findIndex(x => x.JUDGE === input)
+const index = judgeData.findIndex(x => x.JUDGE.match(input))
 console.log(`This is what you were looking for ${judgeData[index].JUDGE}`)
 
 // judgeData.forEach((element, i) => {

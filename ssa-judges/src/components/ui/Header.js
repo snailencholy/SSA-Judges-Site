@@ -155,7 +155,7 @@ const useStyles = makeStyles((theme) => ({
     navBarParagraph: {
         ...theme.typography.paragraph,
         marginLeft: "3em",
-        textTransform: "none",
+        texttransform: "none",
 
         [theme.breakpoints.down("md")]: {
             marginRight: "1em"
@@ -172,7 +172,7 @@ const useStyles = makeStyles((theme) => ({
     },
     
     linkStyle: {
-        textTransform: "none"
+        texttransform: "none"
     }
 
 }));
@@ -288,7 +288,7 @@ export default function Header(props) {
         <React.Fragment>
             <ElevationScroll>
                 <AppBar
-                classname={classes.appBar}
+                className={classes.appBar}
                 position="fixed"
                 color="primary"
                 >
@@ -305,7 +305,7 @@ export default function Header(props) {
                          className={classes.navBarParagraph}
                          breakpoints={"sm" ? ".5rem" : "1rem"}
                         >
-                            <a textTransform="none" href="https://www.mobiledisabilitylawyer.com/">SEAN F. HAMPTON, ESQ.</a><br/><br/>
+                            <a texttransform="none" href="https://www.mobiledisabilitylawyer.com/">SEAN F. HAMPTON, ESQ.</a><br/><br/>
                             (251) 767-7266 <br/><br/>
                             sean@hamptonjdlaw.com
                         </p>

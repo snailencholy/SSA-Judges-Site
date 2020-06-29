@@ -5,9 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const fs = require("fs");
-const data = fs.readFileSync("./judge-data.json", "utf-8");
-const judgeData = JSON.parse(data)
+
+//JUDGES DATA IMPORT DO NOT TOUCH
+import data from './judge-data.json'
+
 
 const useStyles = makeStyles(theme =>({
     paragraphStyle: {
@@ -56,7 +57,9 @@ const useStyles = makeStyles(theme =>({
 
     searchBar: {
         marginLeft: "50em",
+        marginRight: "50em",
         marginTop: "1em",
+        
 
         [theme.breakpoints.down("lg")]: {
             marginLeft: "32.5em"
@@ -74,6 +77,35 @@ const useStyles = makeStyles(theme =>({
             marginLeft: "3.5em",
             marginRight: "3.5em",
             marginTop: "2em",
+        },
+    },
+
+    submitButton: {
+        maxWidth: "20",
+        fontFamily: "Libre Baskerville",
+        textTransform: "none",
+        marginBottom: "2em",
+        marginRight: "10em",
+        borderRadius: 50,
+        "&:hover": {
+            backgroundColor: theme.palette.secondary.light,
+        },
+
+        [theme.breakpoints.down("lg")]: {
+            marginLeft: "3em",
+        },
+
+        [theme.breakpoints.down("md")]: {
+            marginLeft: "3em",
+        },
+
+        [theme.breakpoints.down("sm")]: {
+            marginLeft: "3em",
+        },
+
+        [theme.breakpoints.down("xs")]: {
+            marginLeft: "3em",
+            mraginRight: "3em",
         },
     },
 
@@ -107,31 +139,45 @@ const useStyles = makeStyles(theme =>({
     }
 }))
 
+const stringData = JSON.stringify(data)
+const judgeData = JSON.parse(stringData)
+const index = judgeData.findIndex(x => x.JUDGE.match("Allen, Michelle I"))
+
+
 export default function LandingPage() {
     const classes = useStyles();
     const theme = useTheme();
-    const [name, setName] = useState("")  
-    
-    let input = ""
+    const [input, setInput] = useState("")  
+        
 
-    function filterJudges() {
-        const index = judgeData.findIndex(x => x.JUDGE === input)
-        console.log(`Got it ${judgeData[index].JUDGE}`)
-    }
+    // function filterJudges() {
+    //     const index = judgeData.findIndex(x => x.JUDGE.match(input))
+    //     console.log(`Got it ${judgeData[index].JUDGE}`)
+    // }
 
     return(
         <div className={classes.bodyStyle}>
             <Grid container direction="column" className={classes.mainContainer}>
+                {/* <div className={classes.searchBar}>Judge's Name</div> */}
                 <Grid container direction="row" alignItems="center" className={classes.searchBar}>
+                   
                     <TextField
                      className={classes.root}
-                     value={name}
+                     value={input}
                      id="judge-search"
+                     helperText="Last, First"
                      label="Judge's Name"
+                     defaultValue="Last, First"
                      type="search"
-                     variant="outlined"
+                     variant="filled"
                     />
-                    <div id="Judge"></div>
+                    <Button                                    
+                        variant="contained"
+                        color="secondary"
+                        className={classes.submitButton}
+                    >
+                        Submit
+                    </Button>
                 </Grid>
                 <Grid container>
                     <p className={classes.paragraphStyle}>
