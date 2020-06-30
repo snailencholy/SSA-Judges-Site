@@ -305,7 +305,15 @@ export default function Header(props) {
                          className={classes.navBarParagraph}
                          breakpoints={"sm" ? ".5rem" : "1rem"}
                         >
-                            <a texttransform="none" href="https://www.mobiledisabilitylawyer.com/">SEAN F. HAMPTON, ESQ.</a><br/><br/>
+                            <a  
+                             href="https://www.mobiledisabilitylawyer.com/" 
+                             style={{
+                                 textDecoration: "none",
+                                 color: "inherit"
+                             }}
+                            >
+                                SEAN F. HAMPTON, ESQ.
+                            </a><br/><br/>
                             (251) 767-7266 <br/><br/>
                             sean@hamptonjdlaw.com
                         </p>
