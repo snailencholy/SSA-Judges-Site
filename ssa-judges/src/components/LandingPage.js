@@ -121,15 +121,15 @@ const useStyles = makeStyles(theme =>({
         },
 
         [theme.breakpoints.down("lg")]: {
-            marginLeft: "35em",
+            marginLeft: "42.5em",
         },
 
         [theme.breakpoints.down("md")]: {
-            marginLeft: "30em",
+            marginLeft: "35em",
         },
 
         [theme.breakpoints.down("sm")]: {
-            marginLeft: "20em",
+            marginLeft: "30em",
         },
 
         [theme.breakpoints.down("xs")]: {
@@ -139,21 +139,31 @@ const useStyles = makeStyles(theme =>({
     }
 }))
 
-const stringData = JSON.stringify(data)
-const judgeData = JSON.parse(stringData)
-const index = judgeData.findIndex(x => x.JUDGE.match("Allen, Michelle I"))
 
 
-export default function LandingPage() {
+
+export default function LandingPage(props) {
+    const judge = {
+        Name: "",
+        TotalDispositions: "",
+        TotalDecisions: "",
+        FullyFavorable: "",
+        PartiallyFavorable: "",
+        TotalDenials: "",
+    }
+
     const classes = useStyles();
     const theme = useTheme();
     const [input, setInput] = useState("")  
         
+    const stringData = JSON.stringify(data)
+    const judgeData = JSON.parse(stringData)
+    const index = judgeData.findIndex(x => x.JUDGE.match("Allen, Michelle I"))
 
-    // function filterJudges() {
-    //     const index = judgeData.findIndex(x => x.JUDGE.match(input))
-    //     console.log(`Got it ${judgeData[index].JUDGE}`)
-    // }
+    function test()  {
+        console.log(judgeData[index].JUDGE);
+    }
+    
 
     return(
         <div className={classes.bodyStyle}>
@@ -167,11 +177,12 @@ export default function LandingPage() {
                      id="judge-search"
                      helperText="Last, First"
                      label="Judge's Name"
-                     defaultValue="Last, First"
                      type="search"
                      variant="filled"
                     />
-                    <Button                                    
+                    <Button
+                        id = "submit" 
+                        //onClick={() => props.setInput(input)}                                  
                         variant="contained"
                         color="secondary"
                         className={classes.submitButton}
