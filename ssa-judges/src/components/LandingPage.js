@@ -93,7 +93,7 @@ const useStyles = makeStyles(theme => ({
 
   submitButton: {
     maxWidth: '20',
-    fontFamily: 'Libre Baskerville',
+    fontFamily: 'Raleway',
     textTransform: 'none',
     marginBottom: '2em',
     marginRight: '10em',
@@ -298,19 +298,11 @@ export default function LandingPage (props) {
         </div>
         <Grid container>
           <p className={classes.paragraphStyle}>
-            The Hampton Law Firm is an organization that builds cases based on
-            preparedness and proper planning. <br />
-            <br /> In the interest of preparing all potential and current
-            clients we have created this tool which will allow all them to
-            search the Judges disposition by name.
-            <br />
-            <br />
-            We would like everyone we represent to have realistic expectations
-            of how the judge they have been assigned awards cases.
+            
           </p>
         </Grid>
       </Grid>
-      <Button
+      {/*<Button
         component={Link}
         to='/disability'
         variant='contained'
@@ -318,7 +310,7 @@ export default function LandingPage (props) {
         className={classes.RequestButton}
       >
         Click here for help applying for Disability
-      </Button>
+      </Button>*/}
     </div>
   )
 }

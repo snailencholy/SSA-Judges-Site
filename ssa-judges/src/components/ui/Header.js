@@ -282,7 +282,22 @@ export default function Header(props) {
         </React.Fragment>
     )
     
-    
+    // <p 
+    //                      className={classes.navBarParagraph}
+    //                      breakpoints={"sm" ? ".5rem" : "1rem"}
+    //                     >
+    //                         <a  
+    //                          href="https://www.mobiledisabilitylawyer.com/" 
+    //                          style={{
+    //                              textDecoration: "none",
+    //                              color: "inherit"
+    //                          }}
+    //                         >
+    //                             SEAN F. HAMPTON, ESQ.
+    //                         </a><br/><br/>
+    //                         (251) 767-7266 <br/><br/>
+    //                         sean@hamptonjdlaw.com
+    //                     </p>
 
     return(
         <React.Fragment>
@@ -297,26 +312,12 @@ export default function Header(props) {
                         component={Link}
                         to="/"
                         onClick={() => props.setValue(0)}
-                        className={classes.logoContainer}
+                        //className={classes.logoContainer}
                         >
-                            <img alt="company logo" className={classes.logo} src={logo}/>
+                            SSA ALJ STATISTICS
+                            {/*<img alt="company logo" className={classes.logo} src={logo}/>*/}
                         </Button>
-                        <p 
-                         className={classes.navBarParagraph}
-                         breakpoints={"sm" ? ".5rem" : "1rem"}
-                        >
-                            <a  
-                             href="https://www.mobiledisabilitylawyer.com/" 
-                             style={{
-                                 textDecoration: "none",
-                                 color: "inherit"
-                             }}
-                            >
-                                SEAN F. HAMPTON, ESQ.
-                            </a><br/><br/>
-                            (251) 767-7266 <br/><br/>
-                            sean@hamptonjdlaw.com
-                        </p>
+                        
                         {matches ? drawer : tabs}
 
                     </Toolbar>

@@ -18,22 +18,22 @@ export default createMuiTheme({
             yellow: `${buttonYellow}`,
         },
         primary: {
-            main: `${headerNavy}`
+            main: `${headerWhite}`
         },
         secondary: {
-            main: `${buttonYellow}`
+            main: `${headerNavy}`
         },
     },
     //Trying to force commits
     typography: {
         tab: {
-            fontFamily: "Libre Baskerville",
+            fontFamily: "Raleway",
             textTransform: "none",
             fontweight: "700",
             fontSize: "1rem",
         },
         paragraph: {
-            fontFamily: "Libre Baskerville",
+            fontFamily: "Raleway",
             textTransform: "none",
             fontweight: "400",
             fontSize: "1rem",
@@ -41,7 +41,7 @@ export default createMuiTheme({
         },
         
         landingPageParagraph: {
-            fontFamily: "Libre Baskerville",
+            fontFamily: "Raleway",
             textTransform: "none",
             fontweight: "700",
             fontSize: "2rem",
@@ -49,7 +49,7 @@ export default createMuiTheme({
         },
 
         searchBar: {
-            fontFamily: "Libre Baskerville",
+            fontFamily: "Raleway",
             textTransform: "none",
             fontweight: "400",
             fontSize: "1rem",
@@ -60,7 +60,7 @@ export default createMuiTheme({
         MuiInputLabel: {
             root: {
                 color: headerNavy,
-                fontFamily: "Libre Baskerville",
+                fontFamily: "Raleway",
                 fontWeight: "700",
                 borderColor: headerNavy,
             }

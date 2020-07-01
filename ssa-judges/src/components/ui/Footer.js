@@ -8,13 +8,14 @@ import logo from "../../assets/LOGO-BLUE_YELLOW.png";
 
 const useStyles = makeStyles((theme) => ({
     footer: {
-        backgroundColor: theme.palette.common.navy,
+        backgroundColor: theme.palette.common.white,
         Padding: 0,
         marginBottom: 0,
         marginTop: "2em",
         width: "100%",
         Zindex: 1302,
         position: "relative",
+        fontFamily: "Raleway",
     },
 
     logo: {
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     link: {
-        color: "white",
+        color: "black",
         fontFamily: "Arial",
         fontSize: "0.75rem",
         fontWeight: "Bold",
@@ -76,10 +77,11 @@ export default function Footer(props) {
                         </Grid>
                     </Grid>
                 </Grid>
-                <img alt="logo"
+                SSA ALJ STATISTICS
+                {/*<img alt="logo"
                 src={logo}
                 className={classes.logo}
-                />
+                />*/}
         </footer>
     );
 }
