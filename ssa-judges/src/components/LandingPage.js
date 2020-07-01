@@ -203,7 +203,7 @@ export default function LandingPage (props) {
   const classes = useStyles()
   const theme = useTheme()
   const [name, setName] = useState('')
-  const [isActive, setActive] = useState(false)
+  //const [isActive, setActive] = useState(false)
   const [open, setOpen] = useState(false)
   const [output, setOutput] = useState("")
 
@@ -212,7 +212,7 @@ export default function LandingPage (props) {
 
   const checkJudge = () => {
     const index = judgeData.findIndex(x => x.JUDGE.match(name))
-    let active = isActive
+    //let active = isActive
     if (index >= 0) {
       
       let judge = {
@@ -241,7 +241,7 @@ export default function LandingPage (props) {
         setOpen(true) //OPENS DIALOG     
       
     } else {
-      active = false
+      //active = false
       alert('This search failed.')
     }
   }
@@ -265,7 +265,7 @@ export default function LandingPage (props) {
             value={name}
             onChange={event => {
               setName(event.target.value)
-              setActive(true)
+              //setActive(true)
             }}
             id='judge-search'
             helperText='Last, First'
@@ -289,7 +289,7 @@ export default function LandingPage (props) {
         <div>
             <Dialog onClose={handleClose} open={open}>
                 <DialogTitle onClose={handleClose}>
-                    Judge Information
+                    Judge
                 </DialogTitle>
                 <DialogContent>
                     {output}
