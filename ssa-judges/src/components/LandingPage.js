@@ -11,6 +11,13 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 //JUDGES DATA IMPORT DO NOT TOUCH
 import data from './judge-data.json'
@@ -43,9 +50,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   closeButton: {
-    position: 'absolute',
-    right: theme.spacing(1),
-    top: theme.spacing(1),
+    position: "absolute",
     color: theme.palette.grey[500],
   },
 
@@ -182,11 +187,7 @@ const DialogTitle = withStyles(useStyles)((props) => {
     return (
       <MuiDialogTitle disableTypography className={classes.root} {...other}>
         <Typography variant="h6">{children}</Typography>
-        {onClose ? (
-          <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-            <CloseIcon />
-          </IconButton>
-        ) : null}
+        
       </MuiDialogTitle>
     );
   });
@@ -224,16 +225,36 @@ export default function LandingPage (props) {
         TotalDenials: judgeData[index].TOTAL_DENIALS
       }
 
+      
+
         setOutput(
             <div>
-                <p>
-                    Name: {judge.name} <br/>
-                    Total Dispositions: {judge.TotalDispositions} <br/>
-                    Total Decisions: {judge.TotalDecisions}   <br/>
-                    Fully Favorable Decisions: {judge.FullyFavorable} <br/>
-                    Partially Favorable Decisions: {judge.PartiallyFavorable} <br/>
-                    Total Denials: {judge.TotalDenials} <br/>
-                </p>
+                <TableContainer component={Paper}>
+                  <Table className={classes.table} aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Name</TableCell>
+                        <TableCell>Total Dispositions</TableCell>
+                        <TableCell>Total Decisions</TableCell>
+                        <TableCell>Fully Favorable Decisons</TableCell>
+                        <TableCell>Partially Favorable Decisions</TableCell>
+                        <TableCell>Total Denials</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow key={judge.name}>
+                          <TableCell component="th" scope="row">
+                            {judge.name}
+                          </TableCell>
+                          <TableCell align="right">{judge.TotalDispositions}</TableCell>
+                          <TableCell align="right">{judge.TotalDecisions}</TableCell>
+                          <TableCell align="right">{judge.FullyFavorable}</TableCell>
+                          <TableCell align="right">{judge.PartiallyFavorable}</TableCell>
+                          <TableCell align="right">{judge.TotalDenials}</TableCell>
+                        </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
             </div>
         )
 
