@@ -225,7 +225,7 @@ export default function LandingPage (props) {
         TotalDenials: judgeData[index].TOTAL_DENIALS
       }
 
-      
+      let percentApproved = ((129 + 7) / 303)*100
 
         setOutput(
             <div>
@@ -239,6 +239,9 @@ export default function LandingPage (props) {
                         <TableCell>Fully Favorable Decisons</TableCell>
                         <TableCell>Partially Favorable Decisions</TableCell>
                         <TableCell>Total Denials</TableCell>
+                        <TableCell>Percent Approved</TableCell>
+                        <TableCell>Percent Denied</TableCell>
+                        <TableCell>Percent Dismissed</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -251,6 +254,7 @@ export default function LandingPage (props) {
                           <TableCell align="right">{judge.FullyFavorable}</TableCell>
                           <TableCell align="right">{judge.PartiallyFavorable}</TableCell>
                           <TableCell align="right">{judge.TotalDenials}</TableCell>
+                          <TableCell align="right">{percentApproved}</TableCell>
                         </TableRow>
                     </TableBody>
                   </Table>
