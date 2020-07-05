@@ -18,7 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 
 //This is where elements I've made myself will be imported.
-import logo from "../../assets/LOGO-BLUE_YELLOW.png";
+import logo from "../../assets/ssa-alj-stats.png";
 
 function ElevationScroll(props) {
     const { children } = props;
@@ -35,7 +35,7 @@ function ElevationScroll(props) {
 
 const useStyles = makeStyles((theme) => ({
     toolbarMargin: {
-        ...theme.mixins.toolbar,
+        
         marginBottom: "8em",
         [theme.breakpoints.down("md")]: {
             marginBottom: "7em"
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("xs")]: {
             marginBottom: "4em"
         },
-
+        ...theme.mixins.toolbar,
     },
 
     logo: {
@@ -121,23 +121,24 @@ const useStyles = makeStyles((theme) => ({
         },
 
         [theme.breakpoints.down("xs")]: {
-            marginLeft: "1.5em",
+            marginLeft: "2em",
         },
     },
 
     drawerIcon: {
         height: "50px",
         width: "50px",
-        color: "#CFD0F8",
+        color: "#041E42",
     },
 
     drawer: {
-        backgroundColor: theme.palette.common.navy
+        backgroundColor: theme.palette.common.grey,  
+        flexShrink: 0, 
     },
 
     drawerItem: {
         ...theme.typography.tab,
-        color: "white",
+        color: theme.palette.common.navy,
         opacity: 0.7,
     },
 
@@ -148,8 +149,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     appBar: {
-        zIndex: theme.zIndex.modal +1,
-        
+        zIndex: theme.zIndex.drawer + 1,
+        backgroundColor: theme.palette.common.grey
     },
 
     navBarParagraph: {
@@ -307,15 +308,14 @@ export default function Header(props) {
                 position="fixed"
                 color="primary"
                 >
-                    <Toolbar disableGutters>
+                    <Toolbar disableGutters backgroundColor={theme.palette.common.headerGrey}>
                         <Button
                         component={Link}
                         to="/"
                         onClick={() => props.setValue(0)}
                         //className={classes.logoContainer}
                         >
-                            SSA ALJ STATISTICS
-                            {/*<img alt="company logo" className={classes.logo} src={logo}/>*/}
+                            <img alt="company logo" className={classes.logo} src={logo}/>
                         </Button>
                         
                         {matches ? drawer : tabs}

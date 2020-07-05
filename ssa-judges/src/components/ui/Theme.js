@@ -1,11 +1,12 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const headerBurgundy = "#53120F"
-const headerNavy = "#13152A"
+const headerNavy = "#041E42"
 const headerBlue = "#CFD0F8"
 const headerRed  = "#DC2523"
 const headerWhite = "#FFFFFF"
 const buttonYellow = "#F8DF31"
+const headerGrey = "#E6E6E6"
 
 export default createMuiTheme({
     palette: {
@@ -16,6 +17,7 @@ export default createMuiTheme({
             red: `${headerRed}`,
             white: `${headerWhite}`,
             yellow: `${buttonYellow}`,
+            grey: `${headerGrey}`,
         },
         primary: {
             main: `${headerWhite}`
@@ -29,7 +31,7 @@ export default createMuiTheme({
         tab: {
             fontFamily: "Raleway",
             textTransform: "none",
-            fontweight: "700",
+            fontweight: "800",
             fontSize: "1rem",
         },
         paragraph: {
