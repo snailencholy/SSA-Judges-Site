@@ -4,11 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 
-//import logo from "../../assets/ssa-alj-stats.png";
+import logo from "../../assets/Asset 1.png";
 
 const useStyles = makeStyles((theme) => ({
     footer: {
-        backgroundColor: theme.palette.common.white,
+        backgroundColor: theme.palette.common.grey,
         Padding: 0,
         marginBottom: 0,
         marginTop: "2em",
@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     logo: {
-        width: "5em",
-        height: "5em",
+        width: "15em",
+        height: "2.5em",
         verticalAlign: "bottom",
         [theme.breakpoints.down("md")]: {
             width: "5em",
@@ -67,11 +67,11 @@ export default function Footer(props) {
                         
                     </Grid>
                 </Grid>
-                SSA ALJ Statistics
-                {/* <img alt="logo"
+                
+                <img alt="logo"
                 src={logo}
                 className={classes.logo}
-                /> */}
+                />
         </footer>
     );
 }

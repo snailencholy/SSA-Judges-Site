@@ -285,7 +285,7 @@ export default function LandingPage (props) {
             can be the difference between receiving or losing your benefits.<br></br>
             With this understanding we have put together this site to help you<br></br>
             find all the information you need. We update this information every month<br></br>
-            as Social Security releases new statistics.<br></br><br></br> Simply type your judges Last
+            as Social Security releases new statistics.<br></br><br></br> Simply type your judges
             name in the search bar below and click submit. <br></br>
           </p>
        
@@ -303,7 +303,6 @@ export default function LandingPage (props) {
               //setActive(true)
             }}
             id='judge-search'
-            helperText='Last, First'
             label="Judge's Name"
             type='search'
             variant='filled'
