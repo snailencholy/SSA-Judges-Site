@@ -25,27 +25,26 @@ import data from './judge-data.json'
 const useStyles = makeStyles(theme => ({
   paragraphStyle: {
     ...theme.typography.landingPageParagraph,
-    marginLeft: '5em',
-    marginRight: '5em',
-    marginBottom: '10em',
+    marginLeft: '4.5em',
+    marginBottom: '2em',
 
     [theme.breakpoints.down('md')]: {
-      marginLeft: '5em',
-      marginRight: '5em',
-      marginBottom: '10em'
+      marginLeft: '1em',
+      marginRight: '1em',
+      marginBottom: '2em'
     },
 
     [theme.breakpoints.down('sm')]: {
-      marginLeft: '3em',
-      marginRight: '3em',
-      marginBottom: '10em',
+      marginLeft: '.5em',
+      marginRight: '.5em',
+      marginBottom: '2em',
       fontSize: '1em'
     },
 
     [theme.breakpoints.down('xs')]: {
-      marginLeft: '2em',
-      marginRight: '2em',
-      marginBottom: '10em'
+      //marginLeft: '1em',
+      //marginRight: '1em',
+      marginBottom: '2em'
     }
   },
 
@@ -55,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   mainContainer: {
-    width: '100%',
+    //width: '100%',
     
     margin: 0
   },
@@ -68,13 +67,12 @@ const useStyles = makeStyles(theme => ({
 
   root: {
     '& .MuiTextField-root': {
-      fontFamily: 'Libre Baskerville'
-    }
+    },
+    marginBottom: "2em",
   },
 
   searchBar: {
-    marginLeft: '50em',
-    marginRight: '50em',
+    marginLeft: '55em',
     marginTop: '1em',
 
     [theme.breakpoints.down('lg')]: {
@@ -91,7 +89,6 @@ const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.down('xs')]: {
       marginLeft: '3.5em',
-      marginRight: '3.5em',
       marginTop: '2em'
     }
   },
@@ -100,9 +97,12 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '20',
     fontFamily: 'Raleway',
     textTransform: 'none',
-    marginBottom: '2em',
-    marginRight: '10em',
+    marginBottom: '3.5em',
+    //marginRight: '10em',
+    marginLeft: '10em',
     borderRadius: 50,
+    backgroundColor: theme.palette.common.navy,
+    color: "white",
     '&:hover': {
       backgroundColor: theme.palette.secondary.light
     },
@@ -121,7 +121,7 @@ const useStyles = makeStyles(theme => ({
 
     [theme.breakpoints.down('xs')]: {
       marginLeft: '3em',
-      mraginRight: '3em'
+      //mraginRight: '3em'
     }
   },
 
@@ -277,8 +277,18 @@ export default function LandingPage (props) {
 
   return (
     <div className={classes.bodyStyle}>
-      <Grid container direction='column' className={classes.mainContainer}>
+      <Grid container  className={classes.mainContainer}>
         {/* <div className={classes.searchBar}>Judge's Name</div> */}
+        
+          <p className={classes.paragraphStyle}>
+            Knowing the statistics of the judge assigned to you by Social Security<br></br> 
+            can be the difference between receiving or losing your benefits.<br></br>
+            With this understanding we have put together this site to help you<br></br>
+            find all the information you need. We update this information every month<br></br>
+            as Social Security releases new statistics.<br></br><br></br> Simply type your judges Last
+            name in the search bar below and click submit. <br></br>
+          </p>
+       
         <Grid
           container
           direction='row'
@@ -305,7 +315,7 @@ export default function LandingPage (props) {
               checkJudge()
             }}
             variant='contained'
-            color='secondary'
+            color={theme.palette.common.navy}
             className={classes.submitButton}
           >
             Submit
@@ -321,11 +331,6 @@ export default function LandingPage (props) {
                 </DialogContent>
             </Dialog>
         </div>
-        <Grid container>
-          <p className={classes.paragraphStyle}>
-            
-          </p>
-        </Grid>
       </Grid>
       {/*<Button
         component={Link}
