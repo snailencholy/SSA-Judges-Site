@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 
-import logo from "../../assets/LOGO-BLUE_YELLOW.png";
+//import logo from "../../assets/ssa-alj-stats.png";
 
 const useStyles = makeStyles((theme) => ({
     footer: {
@@ -64,24 +64,14 @@ export default function Footer(props) {
         <footer className={classes.footer}>
                 <Grid container justify="center" className={classes.mainContainer}>
                     <Grid item className={classes.gridItem}>
-                        <Grid container direction="column" >
-                            <Grid
-                             item
-                             component={Link}
-                             onClick={() => props.setValue(0)}
-                             to="/"
-                             className={classes.link}
-                            >
-                                Home
-                            </Grid>
-                        </Grid>
+                        
                     </Grid>
                 </Grid>
-                SSA ALJ STATISTICS
-                {/*<img alt="logo"
+                SSA ALJ Statistics
+                {/* <img alt="logo"
                 src={logo}
                 className={classes.logo}
-                />*/}
+                /> */}
         </footer>
     );
 }
