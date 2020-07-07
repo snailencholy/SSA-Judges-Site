@@ -23,7 +23,7 @@ function App() {
         />
           <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route exact path="/disability" component={() => <div>disability form</div>} />
+            {/*<Route exact path="https://www.mobiledisabilitylawyer.com/social-security-disability-insurance/do-you-qualify-for-disability/" component={() => <div><a href="https://www.mobiledisabilitylawyer.com/social-security-disability-insurance/do-you-qualify-for-disability/"></a></div>}/>*/}
             <Route exact path="/about" component={() => <div>About Us</div>} />
           </Switch> 
           <Footer

@@ -3,7 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { makeStyles, withTheme } from '@material-ui/styles';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery, Hidden } from '@material-ui/core';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Button from '@material-ui/core/Button';
@@ -174,6 +174,9 @@ const useStyles = makeStyles((theme) => ({
     
     linkStyle: {
         texttransform: "none"
+    },
+    buttonStyle: {
+        backgroundColor: "#999999"
     }
 
 }));
@@ -196,8 +199,8 @@ export default function Header(props) {
 
     const routes = [
         {name: "Home", link: "/", activeIndex: 0},
-        {name: "Disability Help", link: "/disability", activeIndex: 1},
-        {name: "About Us", link: "/about", activeIndex: 2},
+        //{name: "Disability Help", link: "/disability", activeIndex: 1},
+        {name: "About Us", link: "/about", activeIndex: 1},
     ];
     
     
@@ -319,6 +322,24 @@ export default function Header(props) {
                         </Button>
                         
                         {matches ? drawer : tabs}
+                        <Hidden xsDown>
+                        <Button
+                         className={classes.tab}
+                         variant="contained"
+                         style={{backgroundColor: "#CCCCCC"}}
+                        >
+                           <a href="https://www.mobiledisabilitylawyer.com/social-security-disability-insurance/do-you-qualify-for-disability/"
+                            style={{
+                                textDecoration: "none",
+                                color: "inherit",
+                                
+                            }}
+                           >
+                               Do <u><b>YOU</b></u> qualify for <br></br>disability benefits?
+                           </a>
+                        </Button>
+                        </Hidden>
+                        
 
                     </Toolbar>
                 </AppBar>

@@ -215,7 +215,7 @@ export default function LandingPage (props) {
     const index = judgeData.findIndex(x => x.JUDGE.match(name))
     //let active = isActive
     if (index >= 0) {
-      
+      //alert(index)
       let judge = {
         name: judgeData[index].JUDGE,
         TotalDispositions: judgeData[index].TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES,
@@ -225,7 +225,10 @@ export default function LandingPage (props) {
         TotalDenials: judgeData[index].TOTAL_DENIALS
       }
 
-      let percentApproved = ((129 + 7) / 303)*100
+
+      let percentApproved = ((parseInt(judge.FullyFavorable) + parseInt(judge.PartiallyFavorable)) / parseInt(judge.TotalDispositions))*100
+      let percentDenied = ((parseInt(judge.TotalDenials))/parseInt(judge.TotalDispositions))*100
+      let percentDismissed = ((parseInt(judge.TotalDispositions)-parseInt(judge.TotalDecisions))/parseInt(judge.TotalDispositions))*100
 
         setOutput(
             <div>
@@ -233,15 +236,15 @@ export default function LandingPage (props) {
                   <Table className={classes.table} aria-label="simple table">
                     <TableHead>
                       <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Total Dispositions</TableCell>
-                        <TableCell>Total Decisions</TableCell>
-                        <TableCell>Fully Favorable Decisons</TableCell>
-                        <TableCell>Partially Favorable Decisions</TableCell>
-                        <TableCell>Total Denials</TableCell>
-                        <TableCell>Percent Approved</TableCell>
-                        <TableCell>Percent Denied</TableCell>
-                        <TableCell>Percent Dismissed</TableCell>
+                        <TableCell align="center">Name</TableCell>
+                        <TableCell align="center">Total Dispositions</TableCell>
+                        <TableCell align="center">Total Decisions</TableCell>
+                        <TableCell align="center">Fully Favorable Decisons</TableCell>
+                        <TableCell align="center">Partially Favorable Decisions</TableCell>
+                        <TableCell align="center">Total Denials</TableCell>
+                        <TableCell align="center">Percent Approved</TableCell>
+                        <TableCell align="center">Percent Denied</TableCell>
+                        <TableCell align="center">Percent Dismissed</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -249,12 +252,14 @@ export default function LandingPage (props) {
                           <TableCell component="th" scope="row">
                             {judge.name}
                           </TableCell>
-                          <TableCell align="right">{judge.TotalDispositions}</TableCell>
-                          <TableCell align="right">{judge.TotalDecisions}</TableCell>
-                          <TableCell align="right">{judge.FullyFavorable}</TableCell>
-                          <TableCell align="right">{judge.PartiallyFavorable}</TableCell>
-                          <TableCell align="right">{judge.TotalDenials}</TableCell>
-                          <TableCell align="right">{percentApproved}</TableCell>
+                          <TableCell align="center">{judge.TotalDispositions}</TableCell>
+                          <TableCell align="center">{judge.TotalDecisions}</TableCell>
+                          <TableCell align="center">{judge.FullyFavorable}</TableCell>
+                          <TableCell align="center">{judge.PartiallyFavorable}</TableCell>
+                          <TableCell align="center">{judge.TotalDenials}</TableCell>
+                          <TableCell align="center">{percentApproved.toFixed(2)}</TableCell>
+                          <TableCell align="center">{percentDenied.toFixed(2)}</TableCell>
+                          <TableCell align="center">{percentDismissed.toFixed(2)}</TableCell>
                         </TableRow>
                     </TableBody>
                   </Table>
@@ -281,12 +286,7 @@ export default function LandingPage (props) {
         {/* <div className={classes.searchBar}>Judge's Name</div> */}
         
           <p className={classes.paragraphStyle}>
-            Knowing the statistics of the judge assigned to you by Social Security<br></br> 
-            can be the difference between receiving or losing your benefits.<br></br>
-            With this understanding we have put together this site to help you<br></br>
-            find all the information you need. We update this information every month<br></br>
-            as Social Security releases new statistics.<br></br><br></br> Simply type your judges
-            name in the search bar below and click submit. <br></br>
+            Simply type your judges last name, first name in the search bar below and click submit. <br></br>
           </p>
        
         <Grid
@@ -320,8 +320,15 @@ export default function LandingPage (props) {
             Submit
           </Button>
         </Grid>
+        <p className={classes.paragraphStyle}>
+            Knowing the statistics of the judge assigned to you by Social Security<br></br> 
+            can be the difference between receiving or losing your benefits.<br></br>
+            With this understanding we have put together this site to help you<br></br>
+            find all the information you need. We update this information every month<br></br>
+            as Social Security releases new statistics.<br></br><br></br> 
+          </p>
         <div>
-            <Dialog onClose={handleClose} open={open}>
+            <Dialog onClose={handleClose} open={open} fullWidth maxWidth="xl">
                 <DialogTitle onClose={handleClose}>
                     Judge
                 </DialogTitle>
