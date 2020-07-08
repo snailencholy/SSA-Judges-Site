@@ -26,6 +26,32 @@ const useStyles = makeStyles(theme => ({
   paragraphStyle: {
     ...theme.typography.landingPageParagraph,
     marginLeft: '4.5em',
+    marginBottom: '5em',
+
+    [theme.breakpoints.down('md')]: {
+      marginLeft: '1em',
+      marginRight: '1em',
+      marginBottom: '2em'
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '.5em',
+      marginRight: '.5em',
+      marginBottom: '2em',
+      fontSize: '1em'
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      //marginLeft: '1em',
+      //marginRight: '1em',
+      marginBottom: '2em'
+    }
+  },
+
+  instructionParagraphStyle: {
+    ...theme.typography.landingPageParagraph,
+    marginRight: "20em",
+    marginLeft: '4.5em',
     marginBottom: '2em',
 
     [theme.breakpoints.down('md')]: {
@@ -72,8 +98,9 @@ const useStyles = makeStyles(theme => ({
   },
 
   searchBar: {
-    marginLeft: '55em',
+    marginLeft: '20em',
     marginTop: '1em',
+
 
     [theme.breakpoints.down('lg')]: {
       marginLeft: '32.5em'
@@ -99,7 +126,7 @@ const useStyles = makeStyles(theme => ({
     textTransform: 'none',
     marginBottom: '3.5em',
     //marginRight: '10em',
-    marginLeft: '10em',
+    marginLeft: '5em',
     borderRadius: 50,
     backgroundColor: theme.palette.common.navy,
     color: "white",
@@ -285,7 +312,7 @@ export default function LandingPage (props) {
       <Grid container  className={classes.mainContainer}>
         {/* <div className={classes.searchBar}>Judge's Name</div> */}
         
-          <p className={classes.paragraphStyle}>
+          <p className={classes.instructionParagraphStyle}>
             Simply type your judges name in the format (last name, first name) in the search bar below and click submit. <br></br>
           </p>
        
