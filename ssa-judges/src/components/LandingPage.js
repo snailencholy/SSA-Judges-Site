@@ -286,7 +286,7 @@ export default function LandingPage (props) {
         {/* <div className={classes.searchBar}>Judge's Name</div> */}
         
           <p className={classes.paragraphStyle}>
-            Simply type your judges last name, first name in the search bar below and click submit. <br></br>
+            Simply type your judges name in the format (last name, first name) in the search bar below and click submit. <br></br>
           </p>
        
         <Grid
@@ -305,6 +305,7 @@ export default function LandingPage (props) {
             id='judge-search'
             label="Judge's Name"
             type='search'
+            helperText="Last name, First name"
             variant='filled'
           />
           <Button
@@ -330,7 +331,7 @@ export default function LandingPage (props) {
         <div>
             <Dialog onClose={handleClose} open={open} fullWidth maxWidth="xl">
                 <DialogTitle onClose={handleClose}>
-                    Judge
+                    SSA ALJ Judge Data
                 </DialogTitle>
                 <DialogContent>
                     {output}
