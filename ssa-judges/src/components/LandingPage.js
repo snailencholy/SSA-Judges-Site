@@ -19,6 +19,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import ad from '../assets/ad.png'
 //JUDGES DATA IMPORT DO NOT TOUCH
 import data from './judge-data.json'
 
@@ -205,6 +206,11 @@ const useStyles = makeStyles(theme => ({
       marginRight: '2em',
       marginBottom: '10em'
     }
+  },
+
+  AdSpace: {
+    flex: "end",
+    marginLeft: "auto",
   }
 
 }))
@@ -309,52 +315,63 @@ export default function LandingPage (props) {
 
   return (
     <div className={classes.bodyStyle}>
-      <Grid container  className={classes.mainContainer}>
-        {/* <div className={classes.searchBar}>Judge's Name</div> */}
-        
+      <Grid container direction="row" className={classes.mainContainer}>       
+        <Grid
+          container
+          direction='column'
+          className={classes.searchBar}
+        >
+          <Grid item>
           <p className={classes.instructionParagraphStyle}>
             Simply type your judges name in the format (last name, first name) in the search bar below and click submit. <br></br>
           </p>
-       
-        <Grid
-          container
-          direction='row'
-          alignItems='center'
-          className={classes.searchBar}
-        >
-          <TextField
-            className={classes.root}
-            value={name}
-            onChange={event => {
-              setName(event.target.value)
-              //setActive(true)
-            }}
-            id='judge-search'
-            label="Judge's Name"
-            type='search'
-            helperText="Last name, First name"
-            variant='filled'
-          />
-          <Button
-            id='submit'
-            disabled={name.length === 0}
-            onClick={() => {
-              checkJudge()
-            }}
-            variant='contained'
-            color={theme.palette.common.navy}
-            className={classes.submitButton}
-          >
-            Submit
-          </Button>
-        </Grid>
-        <p className={classes.paragraphStyle}>
+          </Grid>
+          <Grid container direction="row">
+          <Grid item>
+            <TextField
+              className={classes.root}
+              value={name}
+              onChange={event => {
+                setName(event.target.value)
+                //setActive(true)
+              }}
+              id='judge-search'
+              label="Judge's Name"
+              type='search'
+              helperText="Last name, First name"
+              variant='filled'
+            />
+          </Grid>
+          
+          <Grid item>
+            <Button
+              id='submit'
+              disabled={name.length === 0}
+              onClick={() => {
+                checkJudge()
+              }}
+              variant='contained'
+              color={theme.palette.common.navy}
+              className={classes.submitButton}
+            >
+              Submit
+            </Button>
+          </Grid>
+          </Grid>
+         
+          <Grid item>
+          <p className={classes.paragraphStyle}>
             Knowing the statistics of the judge assigned to you by Social Security<br></br> 
             can be the difference between receiving or losing your benefits.<br></br>
             With this understanding we have put together this site to help you<br></br>
             find all the information you need. We update this information every month<br></br>
             as Social Security releases new statistics.<br></br><br></br> 
           </p>
+          </Grid>
+
+          <Grid item flexend className={classes.AdSpace}><img src={ad}></img></Grid>
+          {/**/}
+        </Grid>
         <div>
             <Dialog onClose={handleClose} open={open} fullWidth maxWidth="xl">
                 <DialogTitle onClose={handleClose}>
