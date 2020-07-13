@@ -19,18 +19,20 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-import ad from '../assets/ad.png'
+
+import ad from '../assets/vertical-ad.svg'
 //JUDGES DATA IMPORT DO NOT TOUCH
 import data from './judge-data.json'
 
 const useStyles = makeStyles(theme => ({
   paragraphStyle: {
     ...theme.typography.landingPageParagraph,
-    marginLeft: '4.5em',
+    marginLeft: '.25em',
+    marginRight: '15em',
     marginBottom: '5em',
 
     [theme.breakpoints.down('md')]: {
-      marginLeft: '1em',
+      //marginLeft: '1em',
       marginRight: '1em',
       marginBottom: '2em'
     },
@@ -52,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   instructionParagraphStyle: {
     ...theme.typography.landingPageParagraph,
     marginRight: "20em",
-    marginLeft: '4.5em',
+    //marginLeft: '4.5em',
     marginBottom: '2em',
 
     [theme.breakpoints.down('md')]: {
@@ -83,13 +85,20 @@ const useStyles = makeStyles(theme => ({
   mainContainer: {
     //width: '100%',
     
-    margin: 0
+    margin: 0,
+    padding: 0,
   },
 
   bodyStyle: {
-    
-    marginTop: 0,
-    margin: 0
+    backgroundImage: `url(${ad})`,
+    backgroundPosition: "right",
+    backgroundSize: "4000 1600",
+    backgroundRepeat: "no-repeat",
+    backgroundClip: "border-box",
+    height: "100%",
+    width: "100%",
+    marginTop:0,
+    marginBottom:0,
   },
 
   root: {
@@ -99,24 +108,24 @@ const useStyles = makeStyles(theme => ({
   },
 
   searchBar: {
-    marginLeft: '20em',
+    //marginLeft: '20em',
     marginTop: '1em',
 
 
     [theme.breakpoints.down('lg')]: {
-      marginLeft: '32.5em'
+      marginLeft: '5em'
     },
 
     [theme.breakpoints.down('md')]: {
-      marginLeft: '20em'
+      marginLeft: '2.5em'
     },
 
     [theme.breakpoints.down('sm')]: {
-      marginLeft: '15em'
+      marginLeft: '1.5em'
     },
 
     [theme.breakpoints.down('xs')]: {
-      marginLeft: '3.5em',
+      marginLeft: '.5em',
       marginTop: '2em'
     }
   },
@@ -369,8 +378,7 @@ export default function LandingPage (props) {
           </p>
           </Grid>
 
-          <Grid item flexend className={classes.AdSpace}><img src={ad}></img></Grid>
-          {/**/}
+          
         </Grid>
         <div>
             <Dialog onClose={handleClose} open={open} fullWidth maxWidth="xl">
@@ -383,15 +391,6 @@ export default function LandingPage (props) {
             </Dialog>
         </div>
       </Grid>
-      {/*<Button
-        component={Link}
-        to='/disability'
-        variant='contained'
-        color='secondary'
-        className={classes.RequestButton}
-      >
-        Click here for help applying for Disability
-      </Button>*/}
-    </div>
+      </div>  
   )
 }

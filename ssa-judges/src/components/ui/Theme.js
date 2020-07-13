@@ -46,7 +46,7 @@ export default createMuiTheme({
             fontFamily: "Raleway",
             textTransform: "none",
             fontweight: "700",
-            fontSize: "2rem",
+            fontSize: "1.5rem",
 
         },
 
