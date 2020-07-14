@@ -20,7 +20,10 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 
-import ad from '../assets/vertical-ad.svg'
+import vAd from '../assets/vertical-ad.png'
+import hAd from '../assets/horizontal-ad-1.png'
+
+
 //JUDGES DATA IMPORT DO NOT TOUCH
 import data from './judge-data.json'
 
@@ -28,52 +31,52 @@ const useStyles = makeStyles(theme => ({
   paragraphStyle: {
     ...theme.typography.landingPageParagraph,
     marginLeft: '.25em',
-    marginRight: '15em',
+    marginRight: '22em',
     marginBottom: '5em',
 
     [theme.breakpoints.down('md')]: {
       //marginLeft: '1em',
-      marginRight: '1em',
-      marginBottom: '2em'
+      marginRight: '16em',
+      marginBottom: '5em'
     },
 
     [theme.breakpoints.down('sm')]: {
       marginLeft: '.5em',
-      marginRight: '.5em',
-      marginBottom: '2em',
-      fontSize: '1em'
+      marginRight: '15em',
+      marginBottom: '5em',
+      //fontSize: '1em'
     },
 
     [theme.breakpoints.down('xs')]: {
       //marginLeft: '1em',
-      //marginRight: '1em',
+      marginRight: '1em',
       marginBottom: '2em'
     }
   },
 
   instructionParagraphStyle: {
     ...theme.typography.landingPageParagraph,
-    marginRight: "20em",
+    marginRight: "22em",
     //marginLeft: '4.5em',
     marginBottom: '2em',
 
     [theme.breakpoints.down('md')]: {
       marginLeft: '1em',
-      marginRight: '1em',
+      marginRight: '16em',
       marginBottom: '2em'
     },
 
     [theme.breakpoints.down('sm')]: {
       marginLeft: '.5em',
-      marginRight: '.5em',
+      marginRight: '15em',
       marginBottom: '2em',
-      fontSize: '1em'
+      //fontSize: '1em'
     },
 
     [theme.breakpoints.down('xs')]: {
-      //marginLeft: '1em',
-      //marginRight: '1em',
-      marginBottom: '2em'
+      marginLeft: '.25em',
+      marginRight: '1em',
+      marginTop: '8em'
     }
   },
 
@@ -90,11 +93,20 @@ const useStyles = makeStyles(theme => ({
   },
 
   bodyStyle: {
-    backgroundImage: `url(${ad})`,
+    backgroundImage: `url(${vAd})`,
     backgroundPosition: "right",
-    backgroundSize: "4000 1600",
+    backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
-    backgroundClip: "border-box",
+    backgroundAttachment: "scroll",
+
+    [theme.breakpoints.down("xs")]: {
+      backgroundImage: `url(${hAd})`,
+      backgroundPosition: "0 0.25em",
+      backgroundSize: "contain",
+      backgroundRepeat: "no-repeat",
+      backgroundAttachment: "scroll",
+    },
+
     height: "100%",
     width: "100%",
     marginTop:0,
@@ -314,7 +326,7 @@ export default function LandingPage (props) {
       
     } else {
       //active = false
-      alert('This search failed.')
+      alert('The search returned no results. Please make sure you have everything spelled correctly and try again.')
     }
   }
 
@@ -370,15 +382,13 @@ export default function LandingPage (props) {
          
           <Grid item>
           <p className={classes.paragraphStyle}>
-            Knowing the statistics of the judge assigned to you by Social Security<br></br> 
-            can be the difference between receiving or losing your benefits.<br></br>
-            With this understanding we have put together this site to help you<br></br>
-            find all the information you need. We update this information every month<br></br>
+            Knowing the statistics of the judge assigned to you by Social Security 
+            can be the difference between receiving or losing your benefits.
+            With this understanding we have put together this site to help you
+            find all the information you need. We update this information every month
             as Social Security releases new statistics.<br></br><br></br> 
           </p>
-          </Grid>
-
-          
+          </Grid>          
         </Grid>
         <div>
             <Dialog onClose={handleClose} open={open} fullWidth maxWidth="xl">
