@@ -51,6 +51,12 @@ const useStyles = makeStyles(theme => ({
       //marginLeft: '1em',
       marginRight: '1em',
       marginBottom: '2em'
+    },
+    [theme.breakpoints.down("xl")]: {
+      //marginLeft: "2.5em",
+      marginRight: "25em",
+      marginBottom: "8em",
+      fontSize: "2em",
     }
   },
 
@@ -59,6 +65,13 @@ const useStyles = makeStyles(theme => ({
     marginRight: "22em",
     //marginLeft: '4.5em',
     marginBottom: '2em',
+
+    [theme.breakpoints.down("xl")]: {
+      //marginLeft: "2.5em",
+      marginRight: "25em",
+      marginBottom: "2em",
+      fontSize: "2em",
+    },
 
     [theme.breakpoints.down('md')]: {
       marginLeft: '1em',
@@ -123,6 +136,9 @@ const useStyles = makeStyles(theme => ({
     //marginLeft: '20em',
     marginTop: '1em',
 
+    [theme.breakpoints.down('xl')]: {
+      marginLeft: "5em"
+    },
 
     [theme.breakpoints.down('lg')]: {
       marginLeft: '5em'
@@ -146,7 +162,8 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '20',
     fontFamily: 'Raleway',
     textTransform: 'none',
-    marginBottom: '3.5em',
+    marginBottom: '1em',
+    marginTop: ".75em",
     //marginRight: '10em',
     marginLeft: '5em',
     borderRadius: 50,

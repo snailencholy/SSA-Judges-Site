@@ -177,7 +177,8 @@ const useStyles = makeStyles((theme) => ({
     },
     buttonStyle: {
         backgroundColor: "#999999"
-    }
+    },
+    
 
 }));
 
@@ -275,6 +276,21 @@ export default function Header(props) {
                         </ListItem>
                     ))}
                 </List>
+                <Button
+                         className={classes.tab}
+                         variant="contained"
+                         style={{backgroundColor: "#CCCCCC"}}
+                        >
+                           <a href="https://www.mobiledisabilitylawyer.com/social-security-disability-insurance/do-you-qualify-for-disability/"
+                            style={{
+                                textDecoration: "none",
+                                color: "inherit",
+                                
+                            }}
+                           >
+                               Do <u><b>YOU</b></u> qualify for <br></br>disability benefits?
+                           </a>
+                        </Button>
             </SwipeableDrawer>
             <IconButton
             className={classes.drawerIconContainer}
@@ -322,7 +338,7 @@ export default function Header(props) {
                         </Button>
                         
                         {matches ? drawer : tabs}
-                        <Hidden xsDown>
+                        <Hidden smDown>
                         <Button
                          className={classes.tab}
                          variant="contained"

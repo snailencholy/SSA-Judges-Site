@@ -5,6 +5,7 @@ import theme from './ui/Theme';
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
 import LandingPage from "./LandingPage";
+import About from "./About";
 
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={LandingPage} />
             {/*<Route exact path="https://www.mobiledisabilitylawyer.com/social-security-disability-insurance/do-you-qualify-for-disability/" component={() => <div><a href="https://www.mobiledisabilitylawyer.com/social-security-disability-insurance/do-you-qualify-for-disability/"></a></div>}/>*/}
-            <Route exact path="/about" component={() => <div>About Us</div>} />
+            <Route exact path="/about" component={About} />
           </Switch> 
           <Footer
            value={value}
