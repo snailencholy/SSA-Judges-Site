@@ -46,9 +46,11 @@ const useStyles = makeStyles((theme) => ({
         },
 
         [theme.breakpoints.down("xs")]: {
-            marginBottom: "2em"
+            marginBottom: "5em",
+            //width: "auto"
+            maxWidth: "200px"
         },
-        ...theme.mixins.toolbar,
+        
     },
 
     logo: {

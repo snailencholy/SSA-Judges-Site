@@ -31,8 +31,21 @@ const useStyles = makeStyles(theme => ({
   paragraphStyle: {
     ...theme.typography.landingPageParagraph,
     marginLeft: '.25em',
-    marginRight: '22em',
-    marginBottom: '5em',
+    
+
+    [theme.breakpoints.down("xl")]: {
+      //marginLeft: "2.5em",
+      marginRight: "25em",
+      marginBottom: "8em",
+      fontSize: "2em",
+    },
+
+    [theme.breakpoints.down("lg")]: {
+      //marginLeft: "2.5em",
+      marginRight: '22em',
+      marginBottom: '5em',
+      fontSize: "2em",
+    },
 
     [theme.breakpoints.down('md')]: {
       //marginLeft: '1em',
@@ -50,19 +63,15 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       //marginLeft: '1em',
       marginRight: '1em',
-      marginBottom: '2em'
+      marginBottom: '2em',
+      fontSize: '1rem'
     },
-    [theme.breakpoints.down("xl")]: {
-      //marginLeft: "2.5em",
-      marginRight: "25em",
-      marginBottom: "8em",
-      fontSize: "2em",
-    }
+    
   },
 
   instructionParagraphStyle: {
     ...theme.typography.landingPageParagraph,
-    marginRight: "22em",
+    marginRight: "25em",
     //marginLeft: '4.5em',
     marginBottom: '2em',
 
@@ -87,9 +96,11 @@ const useStyles = makeStyles(theme => ({
     },
 
     [theme.breakpoints.down('xs')]: {
-      marginLeft: '.25em',
+      //marginLeft: '.25em',
       marginRight: '1em',
-      marginTop: '8em'
+      marginTop: '8em',
+      marginBottom: "2em",
+      fontSize: "1em"
     }
   },
 
@@ -130,6 +141,14 @@ const useStyles = makeStyles(theme => ({
     '& .MuiTextField-root': {
     },
     marginBottom: "2em",
+    
+    
+  },
+
+  searchItem: {
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: "2.5em"
+    }
   },
 
   searchBar: {
@@ -186,8 +205,7 @@ const useStyles = makeStyles(theme => ({
     },
 
     [theme.breakpoints.down('xs')]: {
-      marginLeft: '3em',
-      //mraginRight: '3em'
+      marginLeft: '8.75em',
     }
   },
 
@@ -365,7 +383,7 @@ export default function LandingPage (props) {
           </p>
           </Grid>
           <Grid container direction="row">
-          <Grid item>
+          <Grid item className={classes.searchItem}>
             <TextField
               className={classes.root}
               value={name}
