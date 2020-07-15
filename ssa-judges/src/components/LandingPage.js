@@ -21,7 +21,7 @@ import Paper from '@material-ui/core/Paper';
 
 
 import vAd from '../assets/vertical-ad.png'
-import hAd from '../assets/horizontal-ad-1.png'
+import hAd from '../assets/horizontal-ad-2.png'
 
 
 //JUDGES DATA IMPORT DO NOT TOUCH
