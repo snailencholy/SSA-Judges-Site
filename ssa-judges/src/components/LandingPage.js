@@ -36,34 +36,75 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xl")]: {
       //marginLeft: "2.5em",
       marginRight: "25em",
-      marginBottom: "8em",
+      marginBottom: "5em",
       fontSize: "2em",
     },
 
     [theme.breakpoints.down("lg")]: {
       //marginLeft: "2.5em",
       marginRight: '22em',
-      marginBottom: '5em',
+      marginBottom: '2em',
       fontSize: "2em",
     },
 
     [theme.breakpoints.down('md')]: {
       //marginLeft: '1em',
       marginRight: '16em',
-      marginBottom: '5em'
+      marginBottom: '1em'
     },
 
     [theme.breakpoints.down('sm')]: {
       marginLeft: '.5em',
       marginRight: '15em',
-      marginBottom: '5em',
+      marginBottom: '.5em',
       //fontSize: '1em'
     },
 
     [theme.breakpoints.down('xs')]: {
       //marginLeft: '1em',
       marginRight: '1em',
-      marginBottom: '2em',
+      marginBottom: '.25em',
+      fontSize: '1rem'
+    },
+    
+  },
+
+  loudParagraphStyle: {
+    ...theme.typography.landingPageParagraph,
+    marginLeft: '.25em',
+    
+
+    [theme.breakpoints.down("xl")]: {
+      //marginLeft: "2.5em",
+      marginRight: "25em",
+      marginBottom: "5em",
+      fontSize: "2em",
+    },
+
+    [theme.breakpoints.down("lg")]: {
+      //marginLeft: "2.5em",
+      marginRight: '22em',
+      marginBottom: '1em',
+      fontSize: "2em",
+    },
+
+    [theme.breakpoints.down('md')]: {
+      //marginLeft: '1em',
+      marginRight: '16em',
+      marginBottom: '.5em'
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: '.5em',
+      marginRight: '15em',
+      marginBottom: '.25em',
+      //fontSize: '1em'
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      //marginLeft: '1em',
+      marginRight: '1em',
+      marginBottom: '25em',
       fontSize: '1rem'
     },
     
@@ -267,7 +308,40 @@ const useStyles = makeStyles(theme => ({
   AdSpace: {
     flex: "end",
     marginLeft: "auto",
-  }
+  },
+
+  tab: {
+    ...theme.typography.tab,
+    minWidth: 10,
+    marginLeft: "10em",
+    marginRight: "10em",
+    marginBottom: "2em",
+
+    [theme.breakpoints.down("lg")]: {
+        marginLeft: "10em",
+        marginRight: "7em"
+    },
+
+    [theme.breakpoints.down("md")]: {
+        minWidth: 1,
+        fontSize: ".25rem",
+        marginLeft: "2em",
+        marginRight: "2em",
+    },
+
+    [theme.breakpoints.down("sm")]: {
+        fontSize: ".25rem",
+        minWidth: 0,
+        marginLeft: "0.5em",
+        marginRight: "0.5em",
+    },
+
+    [theme.breakpoints.down("xs")]: {
+        marginLeft: "0em",
+        marginRight: "0em",
+    },    
+    
+},
 
 }))
 
@@ -379,7 +453,9 @@ export default function LandingPage (props) {
         >
           <Grid item>
           <p className={classes.instructionParagraphStyle}>
-            Simply type your judges name in the format (last name, first name) in the search bar below and click submit. <br></br>
+          This site displays a Social Security Administative Law Judge's disposition 
+          data for the current year. For information on a particular ALJ simply type 
+          his/her name in the space below and hit submit. <br></br>
           </p>
           </Grid>
           <Grid container direction="row">
@@ -417,13 +493,32 @@ export default function LandingPage (props) {
          
           <Grid item>
           <p className={classes.paragraphStyle}>
-            Knowing the statistics of the judge assigned to you by Social Security 
-            can be the difference between receiving or losing your benefits.
-            With this understanding we have put together this site to help you
-            find all the information you need. We update this information every month
-            as Social Security releases new statistics.<br></br><br></br> 
+            This Site should be used for informational purposes only and should
+            not be used to predict the outcome of a particular case.              
+            <br></br><br></br> 
           </p>
-          </Grid>          
+          <p className={classes.loudParagraphStyle}>
+            NEED HELP WITH YOUR DISABILITY CASE?  
+            CLICK BELOW.
+          </p>
+          </Grid> 
+          <Grid item>
+            <Button
+            className={classes.tab}
+            variant="contained"
+            style={{backgroundColor: "#CCCCCC"}}
+            >
+              <a href="https://www.mobiledisabilitylawyer.com/social-security-disability-insurance/do-you-qualify-for-disability/"
+              style={{
+              textDecoration: "none",
+              color: "inherit",
+                                
+              }}
+              >
+               <b>DISABILITY HELP</b>
+              </a>
+            </Button>
+          </Grid>         
         </Grid>
         <div>
             <Dialog onClose={handleClose} open={open} fullWidth maxWidth="xl">

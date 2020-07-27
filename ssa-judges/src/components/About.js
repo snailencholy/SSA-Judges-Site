@@ -54,10 +54,9 @@ export default function About() {
                     of any decision by a judge. We take the information from <a 
                     href="https://www.ssa.gov/appeals/DataSets/04_Disposition_Per_Day_Per_ALJ_Ranking_Report.html" 
                     style={{textDecoration: "none", color: "inherit", fontWeight: "bold"}}>ssa.gov. </a> 
-                    After getting the raw data we format it into an easily searchable source. This data will
+                    After getting the raw data, we process it into a format that is easily understood. This data will
                     be updated on the 29th of every month.<br></br><br></br>
-                    This site is owned and operated by the law office of Sean Hampton Esq. <br></br><br></br>
-                    No representation is made that the quality of legal services to be performed is greater than the quality of legal services performed by other lawyers.
+                    This site is owned and operated by the law office of Sean Hampton Esq. No representation is made that the quality of legal services to be performed is greater than the quality of legal services performed by other lawyers. We make no representations as to accuracy, completeness, timeliness, suitability, or validity of any information presented by this site and will not be liable for any errors, omissions, or delays in this information or any losses, injuries or damages arising from its display or use. 
                 </p>
             </Grid>
         </Grid>
