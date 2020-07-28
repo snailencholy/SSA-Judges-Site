@@ -454,7 +454,9 @@ export default function LandingPage (props) {
           <Grid item>
           <p className={classes.instructionParagraphStyle}>
           This site displays a Social Security Administative Law Judge's disposition 
-          data for the current year. For information on a particular ALJ simply type 
+          data for the current year. It displays the number of fullly favorable decisions,
+          partially favorable decisions, and unfavorable decisions issued by an ALJ in an easy-to-read format.
+          For information on a particular ALJ simply type 
           his/her name in the space below and hit submit. <br></br>
           </p>
           </Grid>

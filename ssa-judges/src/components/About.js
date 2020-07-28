@@ -52,7 +52,7 @@ export default function About() {
                 <p className={classes.paragraphStyle}>
                     This site was built for information purposes only; it in no way indicates the outcome
                     of any decision by a judge. We take the information from <a 
-                    href="https://www.ssa.gov/appeals/DataSets/04_Disposition_Per_Day_Per_ALJ_Ranking_Report.html" 
+                    href="https://www.ssa.gov/appeals/DataSets/03_ALJ_Disposition_Data.html" 
                     style={{textDecoration: "none", color: "inherit", fontWeight: "bold"}}>ssa.gov. </a> 
                     After getting the raw data, we process it into a format that is easily understood. This data will
                     be updated on the 29th of every month.<br></br><br></br>
