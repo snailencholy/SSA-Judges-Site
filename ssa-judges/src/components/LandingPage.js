@@ -388,7 +388,6 @@ export default function LandingPage (props) {
         TotalDenials: judgeData[index].TOTAL_DENIALS
       }
 
-
       let percentApproved = ((parseInt(judge.FullyFavorable) + parseInt(judge.PartiallyFavorable)) / parseInt(judge.TotalDispositions))*100
       let percentDenied = ((parseInt(judge.TotalDenials))/parseInt(judge.TotalDispositions))*100
       let percentDismissed = ((parseInt(judge.TotalDispositions)-parseInt(judge.TotalDecisions))/parseInt(judge.TotalDispositions))*100
