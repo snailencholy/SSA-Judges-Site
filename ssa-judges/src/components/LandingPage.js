@@ -25,7 +25,7 @@ import hAd from '../assets/horizontal-ad-2.png'
 
 
 //JUDGES DATA IMPORT DO NOT TOUCH
-import data from './judge-data.json'
+import data from '../judge.json'
 
 const useStyles = makeStyles(theme => ({
   paragraphStyle: {
@@ -375,6 +375,26 @@ export default function LandingPage (props) {
   const judgeData = JSON.parse(stringData)
 
   const checkJudge = () => {
+    //console.log(judgeData);
+    let list = []
+
+    for (let i = 0; i < judgeData.length; i ++ ) {
+      //list.push(judgeData[i]);
+      let lowered = judgeData[i].JUDGE.toLowerCase();
+      if (lowered.includes(name)) {
+        list.push(judgeData[i]);
+      }
+      //console.log(list);
+    }
+
+    /* 
+    Planned refactor for this includes mapping the above list of results
+    to a table instead of building one object. 
+    This should return all instances of a name if there are multiple entries 
+    for the same person.  
+     */
+    
+    console.log(list);
     const index = judgeData.findIndex(x => x.JUDGE.match(name))
     //let active = isActive
     if (index >= 0) {

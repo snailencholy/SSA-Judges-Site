@@ -66,3 +66,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+# Getting Data
+
+- open a terminal in the ssa-judges/src directory and run `node fetch-xml.js` This will download and parse the data from https://www.ssa.gov/appeals/DataSets/03_ALJ_Disposition_Data.xml. A file named judge.json will be created.
+
+- open the judge.json file
+    - This file requires additional cleaning
+
+- delete `{"data":{"$":{"created":"10/13/2020","records":"1840"},"title":["Administrative Law Judge Disposition Data"],"RPTG_PRD_ENDT":["09/25/2020"],"row":` from the beginning of the file and `}}` from the end of the file.
+    - To make the file easier to edit, right-click and find "format document with" in the context menu. Format with Prettier to get the best results.
+
+- press ctr-f to open up the find menu. Search for [" and replace all with "". Then search for "] and replace all with ""
