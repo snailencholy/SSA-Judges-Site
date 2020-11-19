@@ -131,8 +131,9 @@ const useStyles = makeStyles(theme => ({
     },
 
     [theme.breakpoints.down('sm')]: {
+      marginTop: '10em',
       marginLeft: '.5em',
-      marginRight: '15em',
+      //marginRight: '15em',
       marginBottom: '2em',
       //fontSize: '1em'
     },
@@ -165,7 +166,7 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: "no-repeat",
     backgroundAttachment: "scroll",
 
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       backgroundImage: `url(${hAd})`,
       backgroundPosition: "0 0.25em",
       backgroundSize: "contain",
