@@ -22,6 +22,7 @@ import Paper from '@material-ui/core/Paper';
 
 import vAd from '../assets/vertical-ad.png'
 import hAd from '../assets/horizontal-ad-2.png'
+import OutputTable from './OutputTable';
 
 
 //JUDGES DATA IMPORT DO NOT TOUCH
@@ -381,7 +382,7 @@ export default function LandingPage (props) {
     for (let i = 0; i < judgeData.length; i ++ ) {
       //list.push(judgeData[i]);
       let lowered = judgeData[i].JUDGE.toLowerCase();
-      if (lowered.includes(name)) {
+      if (lowered.includes(name.toLowerCase())) {
         list.push(judgeData[i]);
       }
       //console.log(list);
@@ -394,27 +395,42 @@ export default function LandingPage (props) {
     for the same person.  
      */
     
-    console.log(list);
+    //console.log(list);
     const index = judgeData.findIndex(x => x.JUDGE.match(name))
     //let active = isActive
-    if (index >= 0) {
+    if (list.length > 0) {
+
+      
       //alert(index)
-      let judge = {
-        name: judgeData[index].JUDGE,
-        TotalDispositions: judgeData[index].TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES,
-        TotalDecisions: judgeData[index].TOTAL_DECISIONS,
-        FullyFavorable: judgeData[index].FULLY_FAVORABLE,
-        PartiallyFavorable: judgeData[index].PARTIALLY_FAVORABLE,
-        TotalDenials: judgeData[index].TOTAL_DENIALS
-      }
+      // let judge = {
+      //   name: judgeData[index].JUDGE,
+      //   TotalDispositions: judgeData[index].TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES,
+      //   TotalDecisions: judgeData[index].TOTAL_DECISIONS,
+      //   FullyFavorable: judgeData[index].FULLY_FAVORABLE,
+      //   PartiallyFavorable: judgeData[index].PARTIALLY_FAVORABLE,
+      //   TotalDenials: judgeData[index].TOTAL_DENIALS
+      // }
 
-      let percentApproved = ((parseInt(judge.FullyFavorable) + parseInt(judge.PartiallyFavorable)) / parseInt(judge.TotalDispositions))*100
-      let percentDenied = ((parseInt(judge.TotalDenials))/parseInt(judge.TotalDispositions))*100
-      let percentDismissed = ((parseInt(judge.TotalDispositions)-parseInt(judge.TotalDecisions))/parseInt(judge.TotalDispositions))*100
+      // let percentApproved = ((parseInt(judge.FullyFavorable) + parseInt(judge.PartiallyFavorable)) / parseInt(judge.TotalDispositions))*100
+      // let percentDenied = ((parseInt(judge.TotalDenials))/parseInt(judge.TotalDispositions))*100
+      // let percentDismissed = ((parseInt(judge.TotalDispositions)-parseInt(judge.TotalDecisions))/parseInt(judge.TotalDispositions))*100
 
-        setOutput(
+        
+      //     const judgeMap = list.map((data, index) => {
+      //       let percentApproved = ((parseInt(data.FULLY_FAVORABLE) + parseInt(data.PARTIALLY_FAVORABLE)) / parseInt(data.TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES))*100
+      //       let percentDenied = ((parseInt(data.TOTAL_DENIALS))/parseInt(data.TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES))*100
+      //       let percentDismissed = ((parseInt(data.TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES)-parseInt(data.TOTAL_DECISIONS))/parseInt(data.TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES))*100
+      
+          setOutput(
             <div>
-                <TableContainer component={Paper}>
+              {/* Changed the table into an external component so 
+                  that it can be generated and give every result
+                  more easily.
+              */}
+              <OutputTable list={list}/>
+
+
+                {/* <TableContainer component={Paper}>
                   <Table className={classes.table} aria-label="simple table">
                     <TableHead>
                       <TableRow>
@@ -430,24 +446,26 @@ export default function LandingPage (props) {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                        <TableRow key={judge.name}>
+                        <TableRow key={index}>
                           <TableCell component="th" scope="row">
-                            {judge.name}
+                            {data.JUDGE}
                           </TableCell>
-                          <TableCell align="center">{judge.TotalDispositions}</TableCell>
-                          <TableCell align="center">{judge.TotalDecisions}</TableCell>
-                          <TableCell align="center">{judge.FullyFavorable}</TableCell>
-                          <TableCell align="center">{judge.PartiallyFavorable}</TableCell>
-                          <TableCell align="center">{judge.TotalDenials}</TableCell>
+                          <TableCell align="center">{data.TOTAL_ALJ_DIPOSITIONS_ACROSS_ALL_OFFICES}</TableCell>
+                          <TableCell align="center">{data.TOTAL_DECISIONS}</TableCell>
+                          <TableCell align="center">{data.FULLY_FAVORABLE}</TableCell>
+                          <TableCell align="center">{data.PARTIALLY_FAVORABLE}</TableCell>
+                          <TableCell align="center">{data.TOTAL_DENIALS}</TableCell>
                           <TableCell align="center">{percentApproved.toFixed(2)}</TableCell>
                           <TableCell align="center">{percentDenied.toFixed(2)}</TableCell>
                           <TableCell align="center">{percentDismissed.toFixed(2)}</TableCell>
                         </TableRow>
                     </TableBody>
                   </Table>
-                </TableContainer>
+                </TableContainer> */}
             </div>
-        )
+          )
+            //})
+        
 
 
         setOpen(true) //OPENS DIALOG     
